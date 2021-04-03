@@ -1,0 +1,10 @@
+.top_box{
+  background-color: red;
+}
+
+.link_box{
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
