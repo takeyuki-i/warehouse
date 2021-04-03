@@ -2,8 +2,22 @@
   background-color: red;
 }
 
+.content_box{
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
 .link_box{
   background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.form{
+  background-color: green;
   display: flex;
   flex-direction: column;
   align-items: left;
