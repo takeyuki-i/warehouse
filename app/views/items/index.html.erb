@@ -1,17 +1,22 @@
 <div class = "top_box">
   <ul class = "content_box">
+    <li> <%= link_to '新規ユーザー登録ページ', new_user_registration_path %></li>
     <li> <%= link_to '商品登録', new_item_path %></li>
   </ul>
   <ul class = "link_box">
-    <li> <%= link_to '新規登録ページ', new_user_registration_path %></li>
-    <li> <%= link_to "ログイン", new_user_session_path%></li>
-    <li> <%= link_to 'ログアウト',destroy_user_session_path , method: :delete %></li>
+    <% if user_signed_in? %>
+      <li> ユーザー名：<%= link_to current_user.name, "#"%> </li>
+      <li> <%= link_to 'ログアウト',destroy_user_session_path , method: :delete %></li>
+    <%else%>
+      <li> <%= link_to "ログイン", new_user_session_path%></li>
+    <% end %>
   </ul>
 </div>
 
-<div class = "item_box" >
 <% @items.each do |item| %>
+<div class = "item_box" >
 <%= image_tag item.image.variant(resize: '200x200') , class: 'image_box' if item.image.attached?  %>
 <%= item.name%>
+<%= link_to '個別表示',"/items/#{item.id}" %>
 <% end %>
 </div>

@@ -30,3 +30,29 @@
 .item_box{
   background-color: palegreen;
 }
+
+.show_image{
+  background-color: brown;
+}
+
+.show_itemname{
+  background-color: blueviolet;
+}
+
+.show_frame{
+  background-color: cadetblue;
+  font-size: large;
+}
+
+.top_link{
+  background-color: chocolate;
+}
+
+.show_frame_total{
+  background-color: cornflowerblue;
+}
+
+.show_state {
+  background-color:darkgreen
+
+}

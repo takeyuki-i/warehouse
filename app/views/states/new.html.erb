@@ -1,0 +1,36 @@
+在庫登録機能
+<div>
+<%= image_tag @item.image.variant(resize: '200x200') %>
+</div>
+<div>
+商品名：<%= @item.name%>
+</div>
+
+  <div class="form">
+    <%= form_with(model:[@item, @state], local: true) do |form| %>
+    <h3>数量の選択 ※数字</h3>
+    <%= form.text_field :quantity, placeholder: "数量"%>
+
+    <h3>使用期限は設定しますか ※数字</h3>
+    <%= form.collection_select(:limit_id, Limit.all, :id, :name, {}, {class:"genre-select"}) %>
+
+    <h3>期日</h3>
+    <%= form.date_select :limit_day , use_month_numbers: true,discard_hour: true,date_separator: '/' %>
+
+    <h3>期日アラームは設定しますか ※数字</h3>
+    <%= form.collection_select(:alarm_id, Alarm.all, :id, :name, {}, {class:"genre-select"}) %>
+
+    <h3>通知日</h3>
+    <%= form.date_select :alarm_day , use_month_numbers: true,discard_hour: true,date_separator: '/' %>
+
+    <h3>保管場所の名称</h3>
+    <%= form.text_field :storage_name, placeholder: "保管場所の名前"%>
+    <h3>保管場所の住所</h3>
+    <%= form.text_field :storage_address, placeholder: "保管場所の住所"%>
+    <%= form.submit "登録" %>
+    <% end %>
+  </div>
+
+<div>
+<%= link_to "トップページ" , "/"%>
+</div>

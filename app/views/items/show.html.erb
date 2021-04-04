@@ -1,0 +1,38 @@
+<div>
+個別表示
+</div>
+
+<%= image_tag @item.image.variant(resize: '200x200') , class: :show_image %>
+
+<div class = "show_itemname">
+商品名：<%= @item.name %>
+</div>
+
+<div class = "show_frame_total">
+<%= link_to 'edit(編集)',"/items/#{@item.id}/edit",method: :get  , class: :show_frame %>
+<%= link_to 'Delete(削除)',"/items/#{@item.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
+<%= link_to '在庫管理',"/items/#{@item.id}/states/new"  , class: :show_frame %>
+</div>
+
+<% @states.each do |state| %>
+<div class = "show_state">
+<%= state.quantity %>
+
+<%= state.limit.name %>
+<% if state.limit_id == 2 %>
+<%= state.limit_day.strftime("%Y年%m月%d日") %>
+<% end %>
+
+<%= state.alarm.name %>
+<% if state.limit_id == 2 %>
+<%= state.alarm_day.strftime("%Y年%m月%d日") %>
+<% end %>
+
+<%= state.storage_name %>
+<%= state.storage_address %>
+</div>
+<% end %>
+
+<div>
+<%= link_to "トップページ" , "/" , class: :top_link %>
+</div>
