@@ -54,5 +54,8 @@
 
 .show_state {
   background-color:darkgreen
+}
 
+.state_link {
+  background-color: darkblue;
 }

@@ -31,9 +31,11 @@
 | Column          | Type       | Options                         |
 | --------------- | ---------- | ------------------------------- |
 | quantity        | string     | null: false                     |
-| limit           | integer    | null: false                     |
+| unit_id         | integer    | null: false                     |
+| limit_id        | integer    | null: false                     |
+| limit_id        | integer    | null: false                     |
 | limit_day       | datetime   | null: false                     |
-| alarm           | integer    | null: false                     |
+| alarm_id        | integer    | null: false                     |
 | alarm_day       | datetime   | null: false                     |
 | storage_name    | string     | null: false                     |
 | storage_address | string     | null: false                     |

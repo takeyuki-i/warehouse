@@ -1,14 +1,13 @@
-在庫登録機能
 <div>
-<%= image_tag @item.image.variant(resize: '200x200') %>
+ステータス編集
 </div>
-<div>
-商品名：<%= @item.name%>
-</div>
-
   <div class="form">
     <%= form_with(model:[@item, @state], local: true) do |form| %>
-    <h3>数量の選択 ※数字</h3>
+
+    <h3>商品ID</h3>
+    <%= @state.id %>
+
+    <h3>数量の選択</h3>
     <%= form.text_field :quantity, placeholder: "数量"%>
     <%= form.collection_select(:unit_id, Unit.all, :id, :name, {}) %>
 

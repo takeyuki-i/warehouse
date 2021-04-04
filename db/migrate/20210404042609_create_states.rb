@@ -2,6 +2,7 @@ class CreateStates < ActiveRecord::Migration[6.0]
   def change
     create_table :states do |t|
       t.string :quantity , null: false
+      t.integer :unit_id , null: false
       t.integer :limit_id , null: false
       t.datetime :limit_day , null: false
       t.integer :alarm_id , null: false
