@@ -1,0 +1,49 @@
+<h1>
+  使用期限優先
+</h1>
+
+<%= image_tag @item.image.variant(resize: '200x200') , class: :show_image %>
+
+<div class = "show_itemname">
+  商品名：<%= @item.name %>
+</div>
+
+<ol>
+  出荷順
+  <% @states.each do |state| %>
+  <% if state.limit_id == 2 %>
+    <li class = "show_state">
+        <%= state.id %>
+        使用期限
+        <%= state.limit_day.strftime("%Y年%m月%d日") %>
+        <%= state.quantity %>
+        <%= state.unit.name %>
+        <%= state.storage_name %>
+        <%= state.storage_address %>
+        <%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :state_link %>
+      </li>
+    <% end %>
+  <% end %>
+</ol>
+
+<ol>
+  使用期限設定無し
+  <% @states.each do |state| %>
+    <% if state.limit_id == 3 %>
+      <li class = "show_state">
+        <%= state.id %>
+        <%= state.quantity %>
+        <%= state.unit.name %>
+        <%= state.storage_name %>
+        <%= state.storage_address %>
+        <%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :state_link %>
+      </li>
+    <% end %>
+  <% end %>
+</ol>
+
+
+<div>
+  <%= link_to "サーチ" , search_states_path %>
+  <%= link_to "トップページ" , "/" , class: :top_link %>
+</div>

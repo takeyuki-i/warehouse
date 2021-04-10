@@ -1,13 +1,15 @@
-<div>
-商品登録ページ
-  <div class="form">
-    <%= form_with(model: @item, local: true) do |form| %>
+<h1>
+  商品登録ページ
+</h1>
+
+<div class="form">
+  <%= form_with(model: @item, local: true) do |form| %>
     <h3>画像の選択</h3>
     <%= form.file_field :image, placeholder: "画像"%>
     <h3>商品の名称</h3>
     <%= form.text_field :name, placeholder: "商品名"%>
     <%= form.submit "登録" %>
-    <% end %>
-  </div>
+  <% end %>
 </div>
+
 <%= link_to "トップページ" , "/"%>

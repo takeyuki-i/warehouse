@@ -1,8 +1,9 @@
-<div>
-ステータス編集
-</div>
-  <div class="form">
-    <%= form_with(model:[@item, @state], local: true) do |form| %>
+<h1>
+  ステータス編集
+</h1>
+
+<div class="form">
+  <%= form_with(model:[@item, @state], local: true) do |form| %>
 
     <h3>商品ID</h3>
     <%= @state.id %>
@@ -25,13 +26,14 @@
 
     <h3>保管場所の名称</h3>
     <%= form.text_field :storage_name, placeholder: "保管場所の名前"%>
+
     <h3>保管場所の住所</h3>
     <%= form.text_field :storage_address, placeholder: "保管場所の住所"%>
     <%= form.submit "登録" %>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 
 <div>
-<%= link_to '個別表示',"/items/#{@item.id}" %>
-<%= link_to "トップページ" , "/"%>
+  <%= link_to '個別表示',"/items/#{@item.id}" %>
+  <%= link_to "トップページ" , "/"%>
 </div>

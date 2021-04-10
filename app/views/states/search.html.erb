@@ -1,0 +1,16 @@
+<h1>
+  出庫条件検索
+</h1>
+
+<div>
+  <% @items.each do |item| %>
+    <div class = "item_box" >
+    <%= image_tag item.image.variant(resize: '200x200') , class: 'image_box' if item.image.attached?  %>
+    <%= item.name%>
+    <%= link_to '先入れ先出し' , "/states/#{item.id}/search_firstinout" %>
+    <%= link_to '後入れ先出し' , "/states/#{item.id}/search_lastinout" %>
+    <%= link_to '使用期限優先' , "/states/#{item.id}/search_exdate" %>
+  <% end %>
+</div>
+
+<%= link_to "トップページ" , "/"%>

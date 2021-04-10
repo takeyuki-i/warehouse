@@ -35,6 +35,26 @@ class StatesController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.all
+  end
+
+  def search_firstinout
+    @item = Item.find(params[:id])
+    @states = State.where(item_id: params[:id]).order("created_at ASC")
+  end
+
+  def search_lastinout
+    @item = Item.find(params[:id])
+    @states = State.where(item_id: params[:id]).order("created_at DESC")
+  end
+
+  def search_exdate
+    @item = Item.find(params[:id])
+    @states = State.where(item_id: params[:id]).order("limit_day ASC")
+  end
+
+
 
   private
 

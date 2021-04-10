@@ -22,4 +22,7 @@ class State < ApplicationRecord
   belongs_to :alarm
   belongs_to :unit
 
+  def self.search
+  end
+
 end
