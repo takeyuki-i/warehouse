@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 
+
   def index
     @items = Item.all
   end
@@ -10,7 +11,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+
     if @item.save
+      @user_mail = current_user.email
+      AlarmMailer.send_confirm_to_user(@user_mail).deliver
       redirect_to root_path
     else
       render :new
@@ -41,6 +45,8 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end
+
+
 
   private
 

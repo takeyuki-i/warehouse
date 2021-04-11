@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :states do
     collection do
       get 'search'
+      get 'alarm'
     end
     member do
       get 'search_firstinout'

@@ -54,7 +54,12 @@ class StatesController < ApplicationController
     @states = State.where(item_id: params[:id]).order("limit_day ASC")
   end
 
-
+  def alarm
+    @user_mail = current_user.email
+    if AlarmMailer.send_confirm_to_user(@user_mail).deliver
+      redirect_to root_path
+    end
+  end
 
   private
 
