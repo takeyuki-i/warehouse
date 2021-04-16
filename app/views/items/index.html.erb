@@ -1,4 +1,5 @@
 <div class = "top_box">
+  <%= "本日は#{@today.strftime("%Y年%m月%d日")}です" %>
   <ul class = "content_box">
     <% if user_signed_in? %>
       <li> <%= link_to '商品登録', new_item_path %></li>
@@ -18,6 +19,46 @@
     <% end %>
   </ul>
 </div>
+
+<%# アラーム表示画面 %>
+<h1 class="show-list hidden" id="alarm-test" >
+<div>
+使用期限までの日数
+<% @items.zip(@states).each do |item,state|%>
+  <% limit_day = state.limit_day.to_date %>
+  <% alarm = limit_day - @today  %>
+
+  <div>
+    <% if alarm <= 10 && 0 <= alarm %> 
+      <%= "商品名：#{item.name}" %>
+      <%= "管理ID:#{state.id}"%>
+      <%= "残り日数:#{alarm.to_i}日"%>
+      <%= "使用期限:#{state.limit_day.strftime("%Y年%m月%d日")}"%>
+    <% end %>
+  </div>
+<% end %>
+</div>
+
+<div>
+＊使用期限が切れています＊
+<% @items.zip(@states).each do |item,state|%>
+  <% limit_day = state.limit_day.to_date %>
+  <% alarm = limit_day - @today  %>
+  <div>
+    <% if alarm < 0 %> 
+      <%= "商品名：#{item.name}" %>
+      <%= "管理ID:#{state.id}"%>
+      <%= "使用期限から:#{alarm.to_i.abs}日経過"%>
+      <%= "使用期限:#{state.limit_day.strftime("%Y年%m月%d日")}"%>
+    <% end %>
+  </div>
+<% end %>
+</div>
+</h1>
+
+
+
+
 
 <% if user_signed_in? %>
   <div class = "item_box" >

@@ -1,12 +1,29 @@
-function check(){
-   const alart = document.getElementById("alarmid");
-   alart(function (post){
-      post.addEventListener("click",() =>{ 
-         console.log("OK");
-       });
-   });
-}
-window.addEventListener("load",check);
+window.addEventListener('load', function(){
+
+const pullDownButton = document.getElementById("alarmid")
+const pullDownParents = document.getElementById("alarm-test")
+
+pullDownButton.addEventListener('mouseover', function(){
+   pullDownButton.setAttribute("style","background-color:#FFBEDA;")
+ })
+pullDownButton.addEventListener('mouseout', function(){
+   pullDownButton.setAttribute("style","background-color;#FFBEDA")
+ })
+ pullDownButton.addEventListener('click', function(){
+   pullDownParents.setAttribute("style", "display:block;")
+ })
+
+})
+
+// function check(){
+//    const alart = document.getElementById("alarmid");
+//    alart(function (post) {
+//       post.addEventListener("mouseover",() =>{ 
+//          console.log("OK");
+//        });
+//    });
+// }
+// window.addEventListener("load",check);
 
 
 

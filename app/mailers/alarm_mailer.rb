@@ -4,8 +4,8 @@ class AlarmMailer < ActionMailer::Base
   def send_confirm_to_user(user)
     @user = user
     mail(
-      subject: "会員登録が完了しました。", #メールのタイトル
-      to: @user #宛先
+      subject: "使用期限が近くなりましたのでお知らせ致します。",
+      to: @user
     ) do |format|
       format.text
     end
