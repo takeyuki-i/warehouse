@@ -1,0 +1,53 @@
+<div class = "state_new">
+  <%= image_tag @item.image , class: 'state_new_image' if @item.image.attached?   %>
+  <div class = "sate_new_item_name">
+    商品名：<%= @item.name%>
+  </div>
+
+  <%= form_with(model:[@item, @state], local: true) do |form| %>
+    <div class = "state_quantitiy_index" >
+      数量・単位を入力して下さい。
+    </div>
+      <%= form.text_field :quantity,class: :state_quantitiy_form , placeholder: "数量"%>
+      <%= form.collection_select(:unit_id, Unit.all, :id , :name, {},{class:"quantitiy_unit"} ) %>
+
+    <div class = "state_storage_name_index">
+      保管場所の名称
+    </div>
+      <%= form.text_field :storage_name, placeholder: "保管場所の名前",class:"state_storage_name" %>
+
+    <div class = "state_storage_address_index">
+      保管場所の住所
+    </div>
+      <%= form.text_field :storage_address, placeholder: "保管場所の住所",class:"state_storage_address"%>
+
+    <div class = "state_limit_index">
+      使用期限は設定しますか  </div>
+    <%= form.collection_select(:limit_id, Limit.all, :id, :name, {}, {class:"state_limit"}) %>
+
+    <div class = "state_limit_date_index" >
+      期日
+    </div>
+      <%= form.date_select :limit_day ,{use_month_numbers: true,discard_hour: true,date_separator: '/' }, {class: "state_limit_date"} %>
+
+    <div class = "state_alarm_index" >
+      期日アラームは設定しますか 
+    </div>
+      <%= form.collection_select(:alarm_id, Alarm.all, :id, :name, {}, {class:"state_alarm"}) %>
+
+    <div class = "state_alarm_date_index">
+      通知日
+    </div>
+      <%= form.date_select :alarm_day ,{use_month_numbers: true,discard_hour: true,date_separator: '/'}, {class: "state_alarm_date"}  %>
+
+    <div class = "subimt_form" >
+        <%= form.submit "登録" ,class: :state_submit %>
+    </div>
+
+    <div class = "state_link_box" >
+        <%= link_to '個別表示',"/items/#{@item.id}",class: "state_link" %>
+    </div>
+  <% end %>
+
+
+</div>

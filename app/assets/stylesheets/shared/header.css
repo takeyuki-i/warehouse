@@ -1,0 +1,42 @@
+.header {
+  background-color: chartreuse;
+  height: 50px;
+  display: flex;
+}
+
+/* 今日の日付 */
+.today_date_bar{
+  background-color: darkkhaki;
+  padding: 1px 10px 1px 5px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.today{
+  font-size: 5px;
+}
+
+.today_date{
+  background-color: darkmagenta;
+  margin: 0 0 0 5px;
+  font-size: 15px;
+}
+
+/* トップページリンク */
+.site_icon_base{
+  background-color: blueviolet;
+  padding: 5px 5px 0 5px;
+  font-size: 30px;
+  width: 200px;
+  height: 50px;
+}
+
+.site_icon{
+  background-color:cadetblue;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}

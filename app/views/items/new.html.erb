@@ -1,33 +1,15 @@
+<%= render "shared/header" %>
 
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>ポケット倉庫</title>
-
-    <%# リセットCSS %>
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-  </head>
-
-  <header>
-    <%# ヘッダー部分テンプレート %>
+<%# 部分テンプレート %>
+  <div class="tatal_page">
+    <%# サイドバー読み込み %>
     <div class="side_bar" >
-      <%= render "header_content" %>
+      <%= render "shared/side_bar" %>
     </div>
-  </header>
-
-  <body>
-    <%# 部分テンプレート %>
-    <div class="tatal_page">
-      <%# サイドバー読み込み %>
-        <div class="side_bar" >
-          <%= render "side_bar" %>
-        </div>
-      <%# メインページ読み込み %>
-        <div class="new_form" >
-          <%= render "new_form" %>
-        </div>
+    <%# メインページ読み込み %>
+    <div class="items_form" >
+      <%= render "items_form" %>
     </div>
-  </body>
+  </div>
 
-</html>
+  <%= render "shared/footer" %>

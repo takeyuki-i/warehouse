@@ -1,36 +1,45 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>ポケット倉庫</title>
+<%= render "shared/header" %>
 
-    <%# リセットCSS %>
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-  </head>
+<%# 部分テンプレート %>
+<div class="tatal_page">
 
-  <header>
-    <%# ヘッダー部分テンプレート %>
-    <div class="side_bar" >
-      <%= render "header_content" %>
-    </div>
-  </header>
+  <%# サイドバー読み込み %>
+  <div class="side_bar" >
+    <%= render "shared/side_bar" %>
+  </div>
 
-  <body>
-    <%# 部分テンプレート %>
-    <div class="tatal_page">
-      <%# サイドバー読み込み %>
-        <div class="side_bar" >
-          <%= render "side_bar" %>
+  <%# メインページ読み込み %>
+  <div class="main_page" >
+    <% if user_signed_in? %>
+      <% @items.each_with_index do |item,index| %>
+        <div class = "item_box" >
+          <div class = "main_page_state_box" >
+            <% if item.image.present? %>
+              <%= image_tag item.image , class: 'image_box' if item.image.attached?  %>
+              <%= link_to '個別表示',"/items/#{item.id}" , class: :main_page_link  %>
+            <% else %>
+              <div class = "no_image">Noimage</div>
+              <%= link_to '個別表示',"/items/#{item.id}" , class: :main_page_link  %>
+            <% end %>
+          </div>
+          <table class = "main_table_total">
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > インデックス </th>
+              <td class = "main_page_state_td"> <%= index %> </td>
+            </tr>
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > ID </th>
+              <td class = "main_page_state_td"> <%= item.id%> </td>
+            </tr>
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > 商品名 </th>
+              <td class = "main_page_state_td"> <%= item.name%> </td>
+            </tr>
+          </table>
         </div>
-      <%# メインページ読み込み %>
-        <div class="main_page" >
-          <%= render "main_page" %>
-        </div>
-    </div>
-  </body>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
-  <footer>
-    <%= render "footer_bar" %>
-  </footer>
-
-</html>
+<%= render "shared/footer" %>

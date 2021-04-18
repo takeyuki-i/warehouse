@@ -1,0 +1,68 @@
+.item_box{
+  background-color: cadetblue;
+  border: solid black 2px;
+  height: 250px;
+  width: 700px;
+  margin: 10px;
+  display: flex;
+}
+
+.main_page_state_box{
+  background-color: crimson;
+}
+
+.main_page_link{
+  background-color: darkolivegreen;
+  border: solid black 2px ;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  color: yellow;
+  text-decoration: none;
+}
+
+.image_box{
+  background-color: chocolate;
+  width: 200px;
+  height: 200px;
+  margin: 3px;
+}
+
+.main_table_total{
+  background-color: darkgreen;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+}
+
+.main_table_tr{
+  background-color: darkgrey;
+  padding: 5px;
+}
+
+.main_page_state{
+  background-color:darkgreen;
+  margin: 10px;
+}
+
+.main_page_table_th{
+  background-color:brown ;
+  border: solid black 2px;
+  padding: 5px;
+}
+
+.main_page_state_td{
+  background-color:cornflowerblue;
+  border: solid black 2px;
+  padding: 5px;
+}
+
+.no_image{
+  background-color: chocolate;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding-top: 80px;
+  text-align: center;
+  font-size: 30px;
+}

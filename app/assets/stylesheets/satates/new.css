@@ -1,0 +1,117 @@
+/* 部分テンプレート################################# */
+.state_form{
+  background-color:rgb(161, 147, 112);
+  width: calc(100vw - 200px);
+  overflow: scroll;
+  display: flex;
+}
+/* 部分テンプレート################################# */
+
+.state_new{
+  background-color:burlywood;
+}
+
+.state_new_image{
+  background-color: brown;
+  border: solid black 2px;
+  height: 150px;
+  width: 150px;
+}
+
+.state_quantitiy_index{
+  background-color: cadetblue;
+}
+
+.state_quantitiy_form{
+  background-color: chartreuse;
+}
+
+.quantitiy_unit{
+  height: 30px;
+  width: 100px;
+  background-color:brown;
+  padding-left: 20px;
+  border-radius: 3px;
+}
+
+.sate_new_item_name{
+  background-color:blue;
+  border: solid black 2px;
+}
+
+.state_limit_index{
+  background-color:brown;
+  border: solid black 2px;
+}
+
+.state_limit{
+  background-color:cornflowerblue;
+  border: solid black 2px ;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+}
+
+.state_limit_date_index{
+  background-color: crimson;
+}
+
+.state_limit_date{
+  background-color:cornflowerblue;
+  border: solid black 2px ;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+}
+
+.state_storage_name_index{
+  background-color: darkgoldenrod;
+}
+
+.state_storage_name{
+  background-color: darkgreen;
+}
+
+.state_storage_address_index{
+  background-color: darkgrey;
+}
+
+.state_storage_address{
+  background-color: darkkhaki;
+}
+
+.state_alarm_index{
+  background-color: darkmagenta;
+}
+
+.state_alarm{
+  background-color: darkorange;
+}
+
+.state_alarm_date_index{
+  background-color: darkturquoise;
+}
+
+.state_alarm_date{
+  background-color: deeppink;
+}
+
+.state_submit{
+  background-color: dodgerblue;
+}
+
+.subimt_form{
+  background-color: firebrick;
+}
+
+.state_link{
+  background-color: chartreuse;
+}
+
+.state_link_box{
+  background-color: coral;
+}
+
+.state_link{
+  background-color: cornflowerblue;
+}

@@ -1,0 +1,64 @@
+
+/* ユーザー名 */
+.name_content{
+  background-color: rgb(68, 254, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  border: solid black 2px ;
+}
+
+.user_tag{
+  background-color: blue;
+  border: solid black 2px;
+  padding: 2px 0 0 10px;
+  font-size: 15px;
+}
+
+.name{
+  background-color: yellow;
+  text-decoration: none;
+  border: solid black 2px ;
+  color: black;
+  padding: 2px;
+  text-align: center;
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+/* コマンド */
+.command_list{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.command{
+  background-color: rgb(197, 35, 148);
+  border: solid black 2px ;
+  margin: 1px 0 0 1px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 198px;
+  color: yellow;
+  text-decoration: none;
+  text-align: center;
+}
+
+.logout{
+  background-color: rgb(154, 228, 26);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 20px 0;
+}
+
+.alarm{
+  background-color: coral;
+  border: solid black 2px ;
+  margin: 1px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 198px;
+  color: yellow;
+}

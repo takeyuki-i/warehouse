@@ -1,0 +1,75 @@
+/* 部分テンプレート################################# */
+.show_main{
+  background-color:rgb(161, 147, 112);
+  width: calc(100vw - 200px);
+  overflow: scroll;
+  display: flex;
+}
+/* 部分テンプレート################################# */
+
+.show_box{
+  background-color: blueviolet;
+  margin: 15px;
+}
+
+.show_image{
+  background-color: chartreuse;
+  margin: 10px;
+}
+
+.show_itemname{
+  background-color: chocolate;
+  margin: 10px;
+}
+
+.show_frame_total{
+  background-color: cornflowerblue;
+  margin: 10px;
+}
+
+.show_frame{
+  background-color: burlywood;
+  color: black;
+  border: solid black 2px ;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 13px;
+}
+
+.show_table_total{
+  background-color: darkgreen;
+  margin: 10px;
+  padding: 5px;
+}
+
+.show_table_tr{
+  background-color: darkgrey;
+  padding: 5px;
+}
+
+.show_table_th{
+  background-color: darkorange;
+  border: solid black 2px;
+  padding: 5px;
+}
+
+.show_state {
+  background-color:darkgreen;
+  margin: 10px;
+}
+
+.show_state_td{
+  background-color: coral;
+  border: solid black 2px;
+  padding: 5px;
+}
+
+.top_link{
+  background-color: chocolate;
+}
+
+.state_link {
+  background-color: darkblue;
+}

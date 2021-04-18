@@ -49,6 +49,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @today = Date.today
   end
 
   def update

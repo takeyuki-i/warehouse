@@ -1,18 +1,15 @@
-<h1>
-  編集表示
-</h1>
+<%= render "shared/header" %>
 
-<div class="form">
-    <%= form_with(model: @item, local: true) do |form| %>
-      <h3>画像の選択</h3>
-    <%= form.file_field :image, placeholder: "画像"%>
-      <h3>商品の名称</h3>
-    <%= form.text_field :name, placeholder: "商品名"%>
-    <%= form.submit "登録" %>
-    <% end %>
-</div>
+  <%# 部分テンプレート %>
+  <div class="tatal_page">
+    <%# サイドバー読み込み %>
+    <div class="side_bar" >
+      <%= render "shared/side_bar" %>
+    </div>
+    <%# メインページ読み込み %>
+    <div class="items_form" >
+      <%= render "items_form" %>
+    </div>
+  </div>
 
-<div>
-  <%= link_to '個別表示',"/items/#{@item.id}" %>
-  <%= link_to "トップページ" , "/"%>
-</div>
+<%= render "shared/footer" %>
