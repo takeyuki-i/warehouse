@@ -1,16 +1,76 @@
-<h1>
-  出庫条件検索
-</h1>
+<%= render "shared/header" %>
 
-<div>
-  <% @items.each do |item| %>
-    <div class = "item_box" >
-    <%= image_tag item.image.variant(resize: '200x200') , class: 'image_box' if item.image.attached?  %>
-    <%= item.name%>
-    <%= link_to '先入れ先出し' , "/states/#{item.id}/search_firstinout" %>
-    <%= link_to '後入れ先出し' , "/states/#{item.id}/search_lastinout" %>
-    <%= link_to '使用期限優先' , "/states/#{item.id}/search_exdate" %>
-  <% end %>
+<%# 部分テンプレート %>
+<div class="tatal_page">
+
+  <%# サイドバー読み込み %>
+  <div class="side_bar" >
+    <%= render "shared/side_bar" %>
+  </div>
+
+  <%# メインページ読み込み %>
+  <div class="state_form" >
+    <div class="main_page" >
+      <% @items.each_with_index do |item,index| %>
+        <div class = "item_box" >
+          <div class = "main_page_state_box" >
+            <% if item.image.present? %>
+              <div class = "search_method_base">
+                <div>
+                  <%= image_tag item.image , class: 'image_box' if item.image.attached?  %>
+                </div>
+                <div class = "search_method_index_base">
+                  <div class = "search_method_botn">
+                    <%= link_to '先入れ先出し' , "/states/#{item.id}/search_firstinout" , class: :search_method  %>
+                  </div>
+                  <div class = "search_method_botn">
+                    <%= link_to '後入れ先出し' , "/states/#{item.id}/search_lastinout" , class: :search_method  %>
+                  </div>
+                  <div class = "search_method_botn">
+                    <%= link_to '使用期限優先' , "/states/#{item.id}/search_exdate" , class: :search_method  %>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+              <div class = "search_method_base">
+                <div class = "no_image">
+                  Noimage
+                </div>
+                <div class = "search_method_index_base">
+                  <div class = "search_method_botn">
+                    <%= link_to '先入れ先出し' , "/states/#{item.id}/search_firstinout" , class: :search_method  %>
+                  </div>
+                  <div class = "search_method_botn">
+                    <%= link_to '後入れ先出し' , "/states/#{item.id}/search_lastinout" , class: :search_method  %>
+                  </div>
+                  <div class = "search_method_botn">
+                    <%= link_to '使用期限優先' , "/states/#{item.id}/search_exdate" , class: :search_method  %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <div>
+              <%= link_to '個別表示',"/items/#{item.id}" , class: :main_page_link  %>
+            </div>
+          </div>
+          <table class = "main_table_total">
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > インデックス </th>
+              <td class = "main_page_state_td"> <%= index %> </td>
+            </tr>
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > ID </th>
+              <td class = "main_page_state_td"> <%= item.id%> </td>
+            </tr>
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > 商品名 </th>
+              <td class = "main_page_state_td"> <%= item.name%> </td>
+            </tr>
+          </table>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<%= link_to "トップページ" , "/"%>
+<%= render "shared/footer" %>

@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_date
 
   def index
     @items = Item.all
@@ -80,6 +81,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name,:image).merge(user_id: current_user.id)
+  end
+
+  def set_date
+    @today = Date.today
   end
 
 end

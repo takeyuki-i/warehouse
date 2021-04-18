@@ -1,0 +1,27 @@
+.search_method_base{
+  display: flex;
+  background-color: blue;
+  border: solid black 2px ;
+}
+
+.search_method_index_base{
+  background-color: chartreuse;
+  margin: 5px 0 0 0;
+}
+
+.search_method{
+  background-color: darkolivegreen;
+  border: solid black 2px ;
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  color: yellow;
+  text-decoration: none;
+}
+
+.search_method_botn{
+  border: solid black 2px ;
+  margin: 5px;
+  height: 30px;
+}

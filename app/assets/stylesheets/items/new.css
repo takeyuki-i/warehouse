@@ -50,3 +50,13 @@
   text-align: center;
   font-size: 15px;
 }
+
+.new_item_submit{
+  background-color: crimson;
+  margin: 10px 0 0 10px;
+}
+
+.top_page_link_base{
+  background-color: darkblue;
+  margin: 10px 0 0 10px;
+}

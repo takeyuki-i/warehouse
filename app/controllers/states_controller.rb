@@ -1,9 +1,9 @@
 class StatesController < ApplicationController
   before_action :set_item, only: [:new,:create,:edit,:update,:destroy]
+  before_action :set_date
 
   def new
     @state = State.new
-    @today = Date.today
   end
 
   def create
@@ -17,7 +17,6 @@ class StatesController < ApplicationController
 
   def edit
     @state = State.find(params[:id])
-    @today = Date.today
   end
 
   def update
@@ -44,19 +43,16 @@ class StatesController < ApplicationController
   def search_firstinout
     @item = Item.find(params[:id])
     @states = State.where(item_id: params[:id]).order("created_at ASC")
-    @today = Date.today
   end
 
   def search_lastinout
     @item = Item.find(params[:id])
     @states = State.where(item_id: params[:id]).order("created_at DESC")
-    @today = Date.today
   end
 
   def search_exdate
     @item = Item.find(params[:id])
     @states = State.where(item_id: params[:id]).order("limit_day ASC")
-    @today = Date.today
   end
 
   def alarm
@@ -74,6 +70,10 @@ class StatesController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def set_date
+    @today = Date.today
   end
 
 end

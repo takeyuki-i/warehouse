@@ -4,6 +4,12 @@
     商品名：<%= @item.name%>
   </div>
 
+  <% if @state.id.present?%>
+  <div class = "item_id">
+    商品ID <%= @state.id %>
+  </div>
+  <% end %>
+
   <%= form_with(model:[@item, @state], local: true) do |form| %>
     <div class = "state_quantitiy_index" >
       数量・単位を入力して下さい。
