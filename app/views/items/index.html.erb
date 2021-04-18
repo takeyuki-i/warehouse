@@ -1,16 +1,16 @@
 <%= render "shared/header" %>
 
-<%# 部分テンプレート %>
-<div class="tatal_page">
+<% if user_signed_in? %>
+  <%# 部分テンプレート %>
+  <div class="tatal_page">
 
-  <%# サイドバー読み込み %>
-  <div class="side_bar" >
-    <%= render "shared/side_bar" %>
-  </div>
+    <%# サイドバー読み込み %>
+    <div class="side_bar" >
+      <%= render "shared/side_bar" %>
+    </div>
 
-  <%# メインページ読み込み %>
-  <div class="main_page" >
-    <% if user_signed_in? %>
+    <%# メインページ読み込み %>
+    <div class="main_page" >
       <% @items.each_with_index do |item,index| %>
         <div class = "item_box" >
           <div class = "main_page_state_box" >
@@ -46,8 +46,19 @@
           </table>
         </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="sing_in_page">
+    <div class = "sing_in_box">
+      <div class = "sing_in_botn">
+        <%= link_to "ログイン", new_user_session_path, class: "command" %>
+      </div>
+      <div class = "sing_up_botn">
+        <%= link_to '新規ユーザー登録ページ', new_user_registration_path, class: "command" %>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <%= render "shared/footer" %>

@@ -1,30 +1,20 @@
-<h1>
-  先入れ先出し
-</h1>
+<%= render "shared/header" %>
 
-<%= image_tag @item.image.variant(resize: '200x200') , class: :show_image %>
+<div class="tatal_page">
+  <%# サイドバー読み込み %>
+  <div class="side_bar" >
+    <%= render "shared/side_bar" %>
+  </div>
 
-<div class = "show_itemname">
-  商品名：<%= @item.name %>
+  <%# メインページ %>
+  <div class="show_main" >
+    <div class = "show_box">
+      <div>
+       先入れ先出し
+      </div>
+       <%= render "state_search" %>
+    </div>
+  </div>
 </div>
 
-<ol>
-  出荷順
-  <% @states.each do |state| %>
-    <li class = "show_state">
-      <%= state.id %>
-      入庫日
-      <%= state.created_at.strftime("%Y年%m月%d日%H時")%>
-      <%= state.quantity %>
-      <%= state.unit.name %>
-      <%= state.storage_name %>
-      <%= state.storage_address %>
-      <%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :state_link %>
-    </li>
-  <% end %>
-</ol>
-
-<div>
-  <%= link_to "サーチ" , search_states_path %>
-  <%= link_to "トップページ" , "/" , class: :top_link %>
-</div>
+<%= render "shared/footer" %>

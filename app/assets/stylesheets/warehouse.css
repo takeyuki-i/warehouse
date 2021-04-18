@@ -50,3 +50,37 @@
 }
 
 /* アラーム通知################################# */
+
+/* ログイン機能################################# */
+
+.sing_in_page {
+  background-color: darkgoldenrod;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sing_in_box{
+  background-color: darkgreen;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sing_in_botn{
+  background-color: chartreuse;
+  width: 250px;
+  height: 50px;
+  padding: 10px;
+}
+
+.sing_up_botn{
+  background-color:coral;
+  width: 250px;
+  height: 50px;
+  padding: 10px;
+}
