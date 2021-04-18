@@ -1,65 +1,259 @@
-.top_box{
-  background-color: red;
+/* ヘッダー################################# */
+header {
+  background-color: chartreuse;
+  height: 50px;
+  display: flex;
 }
 
-.content_box{
-  background-color: yellow;
+/* 今日の日付 */
+.today_date_bar{
+  background-color: darkkhaki;
+  padding: 1px 10px 1px 5px;
+  width: 200px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   align-items: left;
 }
 
-.link_box{
+.today{
+  font-size: 5px;
+}
+
+.today_date{
+  background-color: darkmagenta;
+  margin: 0 0 0 5px;
+  font-size: 15px;
+}
+
+/* トップページリンク */
+.site_icon_base{
+  background-color: blueviolet;
+  padding: 5px 5px 0 5px;
+  font-size: 30px;
+}
+
+.site_icon{
+  background-color:cadetblue;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+
+/* ヘッダー################################# */
+
+/* フッター################################# */
+footer{
+  background-color: crimson;
+  height: 50px;
+}
+/* フッター################################# */
+
+
+/* 部分テンプレート################################# */
+.tatal_page {
+  display: flex;
+  background-color: darkgoldenrod;
+  height: 80vh;
+}
+
+.side_bar {
+  background-color: cyan;
+  width: 200px;
+  height: 80vh;
+}
+
+/* indexメインページ */
+.main_page{
+  background-color: darkgreen;
+  width: calc(100vw - 200px);
+  overflow: scroll;
+  display: flex;
+}
+
+/* showメインページ */
+.show_main{
+  background-color:rgb(161, 147, 112);
+  width: calc(100vw - 200px);
+  overflow: scroll;
+  display: flex;
+}
+
+/* 部分テンプレート################################# */
+
+
+/* サイドバー################################# */
+
+/* ユーザー名 */
+.name_content{
+  background-color: rgb(68, 254, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  border: solid black 2px ;
+}
+
+.user_tag{
   background-color: blue;
+  border: solid black 2px;
+  padding: 2px 0 0 10px;
+  font-size: 15px;
+}
+
+.name{
+  background-color: yellow;
+  text-decoration: none;
+  border: solid black 2px ;
+  color: black;
+  padding: 2px;
+  text-align: center;
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+/* コマンド */
+.command_list{
   display: flex;
   flex-direction: column;
   align-items: left;
 }
 
-.form{
-  background-color: green;
+.command{
+  background-color: rgb(197, 35, 148);
+  border: solid black 2px ;
+  margin: 1px 0 0 1px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 198px;
+  color: yellow;
+  text-decoration: none;
+  text-align: center;
+}
+
+.logout{
+  background-color: rgb(154, 228, 26);
   display: flex;
   flex-direction: column;
   align-items: left;
+  margin: 20px 0;
+}
+
+.alarm{
+  background-color: coral;
+  border: solid black 2px ;
+  margin: 1px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 198px;
+  color: yellow;
+}
+
+/* サイドバー################################# */
+
+/* indexメインページ################################# */
+.item_box{
+  background-color: cadetblue;
+  border: solid black 2px;
+  height: 220px;
+  width: 700px;
+  margin: 20px;
+  display: flex;
 }
 
 .image_box{
-  background-color: orange;
+  background-color: chocolate;
+  height: 200px;
+  width: 200px;
 }
 
-.item_box{
-  background-color: palegreen;
+.item_content{
+  width: 100px;
+  height: 100px;
+  background-color: crimson;
+}
+
+/* indexメインページ################################# */
+
+/* showメインページ################################# */
+
+.show_box{
+  background-color: blueviolet;
+  margin: 15px;
 }
 
 .show_image{
-  background-color: brown;
+  background-color: chartreuse;
+  margin: 10px;
 }
 
 .show_itemname{
-  background-color: blueviolet;
+  background-color: chocolate;
+  margin: 10px;
+}
+
+.show_frame_total{
+  background-color: cornflowerblue;
+  margin: 10px;
 }
 
 .show_frame{
-  background-color: cadetblue;
-  font-size: large;
+  background-color: burlywood;
+  color: black;
+  border: solid black 2px ;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 13px;
 }
+
+.show_table_total{
+  background-color: darkgreen;
+  margin: 10px;
+  padding: 5px;
+}
+
+.show_table_tr{
+  background-color: darkgrey;
+  padding: 5px;
+}
+
+.show_table_th{
+  background-color: darkorange;
+  border: solid black 2px;
+  padding: 5px;
+}
+
+.show_state {
+  background-color:darkgreen;
+  margin: 10px;
+}
+
+.show_state_id{
+  background-color: coral;
+  border: solid black 2px;
+  padding: 5px;
+}
+
+
+
 
 .top_link{
   background-color: chocolate;
 }
 
-.show_frame_total{
-  background-color: cornflowerblue;
-}
 
-.show_state {
-  background-color:darkgreen
-}
+
 
 .state_link {
   background-color: darkblue;
-}
+} */
 
+/* showメインページ################################# */
+
+
+/* アラーム通知################################# */
 .show-list{
 	width:50%;
 	margin:1.5em auto 0;
@@ -73,3 +267,24 @@
 .hidden{
   display: none;
 }
+
+/* アラーム通知################################# */
+
+
+
+/* 
+.top_box{
+}
+
+
+.content_box{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+} */

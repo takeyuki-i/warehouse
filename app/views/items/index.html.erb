@@ -1,71 +1,36 @@
-<div class = "top_box">
-  <%= "本日は#{@today.strftime("%Y年%m月%d日")}です" %>
-  <ul class = "content_box">
-    <% if user_signed_in? %>
-      <li> <%= link_to '商品登録', new_item_path %></li>
-      <li> <%= link_to "サーチ" , search_states_path %></li>
-      <li> <%= link_to "アラーム" , alarm_states_path %></li>
-      <li> <%= button_to "アラーム発生ボタン" , { controller: 'states', action:'alarm'},{ method: :get , calss: :alarm , id: :alarmid } %></li>
-    <% else %>
-      <li> <%= link_to '新規ユーザー登録ページ', new_user_registration_path %></li>
-    <% end %>
-  </ul>
-  <ul class = "link_box">
-    <% if user_signed_in? %>
-      <li> ユーザー名：<%= link_to current_user.name, "#"%> </li>
-      <li> <%= link_to 'ログアウト',destroy_user_session_path , method: :delete %></li>
-    <%else%>
-      <li> <%= link_to "ログイン", new_user_session_path%></li>
-    <% end %>
-  </ul>
-</div>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ポケット倉庫</title>
 
-<%# アラーム表示画面 %>
-<h1 class="show-list hidden" id="alarm-test" >
-<div>
-使用期限までの日数
-<% @items.zip(@states).each do |item,state|%>
-  <% limit_day = state.limit_day.to_date %>
-  <% alarm = limit_day - @today  %>
+    <%# リセットCSS %>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  </head>
 
-  <div>
-    <% if alarm <= 10 && 0 <= alarm %> 
-      <%= "商品名：#{item.name}" %>
-      <%= "管理ID:#{state.id}"%>
-      <%= "残り日数:#{alarm.to_i}日"%>
-      <%= "使用期限:#{state.limit_day.strftime("%Y年%m月%d日")}"%>
-    <% end %>
-  </div>
-<% end %>
-</div>
+  <header>
+    <%# ヘッダー部分テンプレート %>
+    <div class="side_bar" >
+      <%= render "header_content" %>
+    </div>
+  </header>
 
-<div>
-＊使用期限が切れています＊
-<% @items.zip(@states).each do |item,state|%>
-  <% limit_day = state.limit_day.to_date %>
-  <% alarm = limit_day - @today  %>
-  <div>
-    <% if alarm < 0 %> 
-      <%= "商品名：#{item.name}" %>
-      <%= "管理ID:#{state.id}"%>
-      <%= "使用期限から:#{alarm.to_i.abs}日経過"%>
-      <%= "使用期限:#{state.limit_day.strftime("%Y年%m月%d日")}"%>
-    <% end %>
-  </div>
-<% end %>
-</div>
-</h1>
+  <body>
+    <%# 部分テンプレート %>
+    <div class="tatal_page">
+      <%# サイドバー読み込み %>
+        <div class="side_bar" >
+          <%= render "side_bar" %>
+        </div>
+      <%# メインページ読み込み %>
+        <div class="main_page" >
+          <%= render "main_page" %>
+        </div>
+    </div>
+  </body>
 
+  <footer>
+    <%= render "footer_bar" %>
+  </footer>
 
-
-
-
-<% if user_signed_in? %>
-  <div class = "item_box" >
-    <% @items.each do |item| %>
-      <%= image_tag item.image.variant(resize: '200x200') , class: 'image_box' if item.image.attached?  %>
-      <%= item.name%>
-      <%= link_to '個別表示',"/items/#{item.id}" %>
-    <% end %>
-  </div>
-<% end %>
+</html>

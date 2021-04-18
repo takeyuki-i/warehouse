@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+
+  <% @items.each_with_index do |item,index| %>
+    <% if index == 0 || index == 1 || index == 4 || index == 5 %>
+      <div class = "item_box" >
+        <%= image_tag item.image.variant(resize: '200x200') , class: 'image_box' if item.image.attached?  %>
+          <div class = "item_content">
+            <%= index %>
+            <%= item.id%>
+            <%= item.name%>
+            <%= link_to '個別表示',"/items/#{item.id}" %>
+          </div>
+      </div>
+    <% else index == 2 || index == 3 || index == 6 || index == 7 %>
+      <div class = "item_box" >
+        <%= image_tag item.image.variant(resize: '200x200') , class: 'image_box' if item.image.attached?  %>
+          <div class = "item_content">
+            <%= index %>
+            <%= item.id%>
+            <%= item.name%>
+            <%= link_to '個別表示',"/items/#{item.id}" %>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

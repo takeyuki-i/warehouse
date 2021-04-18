@@ -1,0 +1,11 @@
+<div class="today_date_bar">
+  <div class ="today"><%="TODAY"%></div>
+    <span class = "today_date">
+      <%= @today.strftime("%Y年%m月%d日") %>
+    </span>
+  </div>
+</div>
+
+<div class="site_icon_base">
+  <%= link_to 'トップページ', root_path , class: "site_icon" %>
+</div>

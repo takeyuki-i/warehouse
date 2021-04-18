@@ -2,8 +2,8 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @states = State.all
     @today = Date.today
+    @states = State.all
   end
 
     # @state = State.find_by(id: 3)
@@ -62,6 +62,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @states = State.where(item_id: params[:id])
+    @today = Date.today
   end
 
   def destroy

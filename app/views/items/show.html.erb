@@ -1,44 +1,36 @@
-<h1>
-  個別表示
-</h1>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ポケット倉庫</title>
 
-<%= image_tag @item.image.variant(resize: '200x200') , class: :show_image %>
+    <%# リセットCSS %>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  </head>
 
-<div class = "show_itemname">
-  商品名：<%= @item.name %>
-</div>
+  <header>
+    <%# ヘッダー部分テンプレート %>
+    <div class="side_bar" >
+      <%= render "header_content" %>
+    </div>
+  </header>
 
-<div class = "show_frame_total">
-  <%= link_to 'edit(編集)',"/items/#{@item.id}/edit",method: :get  , class: :show_frame %>
-  <%= link_to 'Delete(削除)',"/items/#{@item.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
-  <%= link_to '在庫管理',"/items/#{@item.id}/states/new"  , class: :show_frame %>
-</div>
+  <body>
+    <%# 部分テンプレート %>
+    <div class="tatal_page">
+      <%# サイドバー読み込み %>
+        <div class="side_bar" >
+          <%= render "side_bar" %>
+        </div>
+      <%# メインページ読み込み %>
+        <div class="show_main" >
+          <%= render "show_main" %>
+        </div>
+    </div>
+  </body>
 
-<ol>
-  <% @states.each do |state| %>
-    <li class = "show_state">
-      <%= state.id %>
-      <%= state.quantity %>
-      <%= state.unit.name %>
-      <%= state.limit.name %>
+  <footer>
+    <%= render "footer_bar" %>
+  </footer>
 
-      <% if state.limit_id == 2 %>
-        <%= state.limit_day.strftime("%Y年%m月%d日") %>
-      <% end %>
-
-      <%= state.alarm.name %>
-      <% if state.limit_id == 2 %>
-        <%= state.alarm_day.strftime("%Y年%m月%d日") %>
-      <% end %>
-
-      <%= state.storage_name %>
-      <%= state.storage_address %>
-      <%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :state_link %>
-      <%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
-    </li>
-  <% end %>
-</ol>
-
-<div>
-  <%= link_to "トップページ" , "/" , class: :top_link %>
-</div>
+</html>
