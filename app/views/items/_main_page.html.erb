@@ -2,8 +2,13 @@
   <% @items.each_with_index do |item,index| %>
     <div class = "item_box" >
       <div class = "main_page_state_box" >
+        <% if item.image.present? %>
         <%= image_tag item.image , class: 'image_box' if item.image.attached?  %>
         <%= link_to '個別表示',"/items/#{item.id}" , class: :main_page_link  %>
+        <% else %>
+        <div class = "no_image">Noimage</div>
+        <%= link_to '個別表示',"/items/#{item.id}" , class: :main_page_link  %>
+        <% end %>
       </div>
 
         <table class = "main_table_total">

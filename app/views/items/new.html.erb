@@ -1,15 +1,33 @@
-<h1>
-  商品登録ページ
-</h1>
 
-<div class="form">
-  <%= form_with(model: @item, local: true) do |form| %>
-    <h3>画像の選択</h3>
-    <%= form.file_field :image, placeholder: "画像"%>
-    <h3>商品の名称</h3>
-    <%= form.text_field :name, placeholder: "商品名"%>
-    <%= form.submit "登録" %>
-  <% end %>
-</div>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ポケット倉庫</title>
 
-<%= link_to "トップページ" , "/"%>
+    <%# リセットCSS %>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  </head>
+
+  <header>
+    <%# ヘッダー部分テンプレート %>
+    <div class="side_bar" >
+      <%= render "header_content" %>
+    </div>
+  </header>
+
+  <body>
+    <%# 部分テンプレート %>
+    <div class="tatal_page">
+      <%# サイドバー読み込み %>
+        <div class="side_bar" >
+          <%= render "side_bar" %>
+        </div>
+      <%# メインページ読み込み %>
+        <div class="new_form" >
+          <%= render "new_form" %>
+        </div>
+    </div>
+  </body>
+
+</html>

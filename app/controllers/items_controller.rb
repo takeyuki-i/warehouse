@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @today = Date.today
   end
 
   def create

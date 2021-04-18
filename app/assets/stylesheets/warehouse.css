@@ -178,7 +178,7 @@ footer{
   background-color: chocolate;
   width: 200px;
   height: 200px;
-  margin: 1px;
+  margin: 3px;
 }
 
 .main_table_total{
@@ -210,7 +210,16 @@ footer{
   padding: 5px;
 }
 
+.no_image{
+  background-color: chocolate;
+  width: 200px;
+  height: 200px;
+  margin: 3px;
+  padding-top: 80px;
+  text-align: center;
+  font-size: 30px;
 
+}
 
 /* indexメインページ################################# */
 
@@ -275,21 +284,76 @@ footer{
   padding: 5px;
 }
 
-
-
-
 .top_link{
   background-color: chocolate;
 }
-
-
-
 
 .state_link {
   background-color: darkblue;
 } */
 
 /* showメインページ################################# */
+
+
+/* newページ################################# */
+
+.new_form{
+  background-color: darkolivegreen;
+}
+.content_box{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.new_item_regist{
+  background-color: darkslategray;
+  padding: 10px 0 0 10px;
+}
+
+.form{
+  background-color: darkolivegreen;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.image_select{
+  background-color: darkorange;
+  padding: 10px 0 0 10px;
+}
+
+.new_image_form{
+  background-color: darkorchid;
+  padding: 0 0 0 10px;
+  
+}
+
+.new_item_name{
+  background-color: darkred;
+  padding: 10px 0 0 10px;
+}
+
+.new_name_form{
+  background-color: darksalmon;
+  margin: 0 0 0 10px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.new_submit_form{
+  background-color: darkseagreen;
+  width: 60px;
+  border: solid black 2px ;
+  padding: 2px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* newページ################################# */
+
+
 
 
 /* アラーム通知################################# */
@@ -311,19 +375,3 @@ footer{
 
 
 
-/* 
-.top_box{
-}
-
-
-.content_box{
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-}
-
-.form{
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-} */

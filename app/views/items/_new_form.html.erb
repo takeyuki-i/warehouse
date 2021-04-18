@@ -1,0 +1,14 @@
+<div class="form">
+  <div class ="new_item_regist" >
+  <p>新しい商品を登録できます。</p>
+  <p>商品の画像と名称を入力してください。</p>
+  <p>※画像は任意で登録できます。</p>
+  </div>
+  <%= form_with(model: @item, local: true) do |form| %>
+    <div class ="image_select " >画像の選択</div>
+    <%= form.file_field :image, placeholder: "画像" ,class: :new_image_form %>
+    <div class = "new_item_name" >商品の名称 </div>
+    <%= form.text_field :name, placeholder: "商品名" ,class: :new_name_form %>
+    <%= form.submit "登録" ,class: :new_submit_form %>
+  <% end %>
+</div>
