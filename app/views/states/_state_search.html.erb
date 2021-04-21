@@ -8,7 +8,7 @@
   <%= link_to 'edit(編集)',"/items/#{@item.id}/edit",method: :get  , class: :show_frame %>
   <%= link_to 'Delete(削除)',"/items/#{@item.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
   <%= link_to '在庫追加',"/items/#{@item.id}/states/new"  , class: :show_frame %>
-  <%= link_to '一覧に戻る',search_states_path , class: :show_frame %>
+  <%= link_to '戻る',search_states_path , class: :show_frame %>
 </div>
 
 <table class = "show_table_total">
@@ -35,7 +35,6 @@
         <% else state.limit_id == 2 %>
           <td class = show_state_td><%= state.limit_day.strftime("%Y年%m月%d日") %></td>
         <% end %>
-      <td class = show_state_td><%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :show_frame %>
       <td class = show_state_td><%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
     </tr>
   <% end %>

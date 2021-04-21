@@ -19,7 +19,7 @@
                <%= image_tag item.image , class: 'image_box' if item.image.attached?  %>
               </div>
               <div>
-                <%= link_to '個別表示',"/items/#{item.id}" , class: :main_page_link  %>
+                <%= link_to '在庫管理',"/items/#{item.id}" , class: :main_page_link  %>
               </div>
             <% else %>
               <div class = "no_image">

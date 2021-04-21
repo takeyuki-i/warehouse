@@ -1,24 +1,18 @@
 
 /* ユーザー名 */
 .name_content{
-  background-color: rgb(68, 254, 0);
   display: flex;
   flex-direction: column;
   align-items: left;
-  border: solid black 2px ;
 }
 
 .user_tag{
-  background-color: blue;
-  border: solid black 2px;
   padding: 2px 0 0 10px;
   font-size: 15px;
 }
 
 .name{
-  background-color: yellow;
   text-decoration: none;
-  border: solid black 2px ;
   color: black;
   padding: 2px;
   text-align: center;
@@ -34,19 +28,16 @@
 }
 
 .command{
-  background-color: rgb(197, 35, 148);
-  border: solid black 2px ;
-  margin: 1px 0 0 1px;
-  padding: 10px;
+  margin: 5px 1px 0 1px;
+  padding: 5px;
   border-radius: 5px;
-  width: 198px;
-  color: yellow;
+  width: 195px;
+  color: black;
   text-decoration: none;
   text-align: center;
 }
 
 .logout{
-  background-color: rgb(154, 228, 26);
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -54,11 +45,11 @@
 }
 
 .alarm{
-  background-color: coral;
-  border: solid black 2px ;
+  background-color: #ffff99;
+  border: none;
   margin: 1px;
   padding: 10px;
   border-radius: 5px;
-  width: 198px;
-  color: yellow;
+  width: 195px;
+  color: black;
 }

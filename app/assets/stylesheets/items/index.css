@@ -1,38 +1,40 @@
 .item_box{
-  background-color: cadetblue;
-  border: solid black 2px;
+  background-color: lightgray;
+  border: solid lightgray 1px;
   height: 250px;
   width: 700px;
   margin: 10px;
   display: flex;
+  border-radius: 10px;
 }
 
 .main_page_state_box{
-  background-color: crimson;
 }
 
 .main_page_link{
-  background-color: darkolivegreen;
-  border: solid black 2px ;
+  background-color: #e6e6e6;
+  border: solid black 2px;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
-  color: yellow;
+  color: black;
   text-decoration: none;
 }
 
 .image_box{
-  background-color: chocolate;
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 10px;
   width: 200px;
   height: 200px;
   margin: 3px;
 }
 
 .main_table_total{
-  background-color: darkgreen;
   margin: 10px;
   padding: 5px;
   display: flex;
+  
 }
 
 .main_table_tr{
@@ -46,19 +48,19 @@
 }
 
 .main_page_table_th{
-  background-color:brown ;
-  border: solid black 2px;
+  background-color:grey ;
+  border: solid darkgrey 1px;
   padding: 5px;
 }
 
 .main_page_state_td{
-  background-color:cornflowerblue;
-  border: solid black 2px;
+  background-color:white;
+  border: solid darkgrey 1px;
   padding: 5px;
 }
 
 .no_image{
-  background-color: chocolate;
+  background-color: white;
   width: 200px;
   height: 200px;
   margin: 5px;

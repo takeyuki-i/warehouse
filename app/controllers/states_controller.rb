@@ -1,6 +1,5 @@
 class StatesController < ApplicationController
   before_action :set_item, only: [:new,:create,:edit,:update,:destroy]
-  before_action :set_date
 
   def new
     @state = State.new
@@ -70,10 +69,6 @@ class StatesController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
-  end
-
-  def set_date
-    @today = Date.today
   end
 
 end

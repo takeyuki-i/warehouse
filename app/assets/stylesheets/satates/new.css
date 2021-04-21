@@ -1,9 +1,10 @@
 /* 部分テンプレート################################# */
 .state_form{
-  background-color:rgb(161, 147, 112);
   width: calc(100vw - 200px);
   overflow: scroll;
   display: flex;
+  padding: 15px;
+  border: solid 1px lightgray;
 }
 /* 部分テンプレート################################# */
 
