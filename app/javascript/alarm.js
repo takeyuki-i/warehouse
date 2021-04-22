@@ -1,7 +1,6 @@
 window.addEventListener('load', function(){
 
 const pullDownButton = document.getElementById("alarm_id")
-const pullDownParents = document.getElementById("alarm-test")
 
 pullDownButton.addEventListener('mouseover', function(){
    pullDownButton.setAttribute("style","background-color:#ffff99;")
