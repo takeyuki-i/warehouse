@@ -1,0 +1,55 @@
+
+/* ユーザー名 */
+.name_content{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.user_tag{
+  padding: 2px 0 0 10px;
+  font-size: 15px;
+}
+
+.name{
+  text-decoration: none;
+  color: black;
+  padding: 2px;
+  text-align: center;
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+/* コマンド */
+.command_list{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.command{
+  margin: 5px 1px 0 1px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 195px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.logout{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 20px 0;
+}
+
+.alarm{
+  background-color: white;
+  border: none;
+  margin: 1px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 195px;
+  color: black;
+}

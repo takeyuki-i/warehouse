@@ -1,0 +1,42 @@
+.header {
+  height: 50px;
+  display: flex;
+}
+
+/* 今日の日付 */
+.today_date_bar{
+  padding: 1px 10px 1px 5px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: white;
+}
+
+.today{
+  font-size: 5px;
+}
+
+.today_date{
+  margin: 0 0 0 5px;
+  font-size: 15px;
+}
+
+/* トップページリンク */
+.site_icon_base{
+  padding: 5px 5px 0 5px;
+  font-size: 30px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+}
+
+.site_icon{
+  width: 50px;
+  height: 50px;
+}
+
+.site_name{
+  margin: 10px 10px 0 10px;
+}

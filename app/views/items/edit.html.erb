@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+  <%# 部分テンプレート %>
+  <div class="tatal_page">
+    <%# サイドバー読み込み %>
+    <div class="side_bar" >
+      <%= render "shared/side_bar" %>
+    </div>
+    <%# メインページ読み込み %>
+    <div class="items_form" >
+      <div>
+        <div class = "menu_title" >
+        商品情報編集
+        </div>
+        <%= form_with(model: @item, local: true) do |form| %>
+          <div class ="image_select " >
+            画像の選択
+          </div>
+          <%= form.file_field :image, placeholder: "画像" ,class: :new_image_form %>
+
+          <div class = "new_item_name" >
+            商品の名称
+          </div>
+            <%= form.text_field :name, placeholder: "商品名" ,class: :new_name_form %>
+
+          <div class = "new_item_submit" >
+            <%= form.submit "変更" ,class: :new_submit_form %>
+          </div>
+        <% end %>
+
+        <div class = "top_page_link_base">
+          <%= link_to '戻る', "/items/#{@item.id}",class: "search_method" %>
+        </div>
+      </div>
+    </div>
+  </div>

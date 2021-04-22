@@ -1,0 +1,69 @@
+<%= render "shared/header" %>
+
+<% if user_signed_in? %>
+  <%# 部分テンプレート %>
+  <div class="tatal_page">
+
+    <%# サイドバー読み込み %>
+    <div class="side_bar" >
+      <%= render "shared/side_bar" %>
+    </div>
+
+    <%# アラーム表示画面 %>
+      <%= render "shared/alarm" %>
+
+    <%# メインページ読み込み %>
+   <div class="main_page" >
+      <% @items.each_with_index do |item,index| %>
+        <div class = "item_box" >
+          <div class = "main_page_state_box" >
+            <% if item.image.present? %>
+              <div>
+               <%= image_tag item.image , class: 'image_box' if item.image.attached?  %>
+              </div>
+              <div>
+                <%= link_to '在庫管理',"/items/#{item.id}" , class: :search_method  %>
+              </div>
+            <% else %>
+                <div class = "no_image">
+                  Noimage
+                </div>
+              <div class = "space">
+              </div>
+              <div>
+                <%= link_to '在庫管理',"/items/#{item.id}" , class: :search_method  %>
+              </div>
+            <% end %>
+          </div>
+          <div  class = "main_table_total" >
+          <table>
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > index： </th>
+              <td class = "main_page_state_td"> <%= index %> </td>
+            </tr>
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > ID： </th>
+              <td class = "main_page_state_td"> <%= item.id%> </td>
+            </tr>
+            <tr class = "main_page_state">
+              <th class = "main_page_table_th" > Item： </th>
+              <td class = "main_page_state_td"> <%= item.name%> </td>
+            </tr>
+          </table>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="sing_in_page">
+    <div class = "sing_in_box">
+      <div class = "sing_in_botn">
+        <%= link_to "ログイン", new_user_session_path, class: "command" %>
+      </div>
+      <div class = "sing_up_botn">
+        <%= link_to '新規ユーザー登録ページ', new_user_registration_path, class: "command" %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<%= render "shared/header" %>
+
+  <%# 部分テンプレート %>
+  <div class="tatal_page">
+    <%# サイドバー読み込み %>
+      <div class="side_bar" >
+        <%= render "shared/side_bar" %>
+      </div>
+    <%# メインページ読み込み %>
+      <div class="state_form" >
+        <div>
+          <div class = "menu_title" >
+          新規登録
+          </div>
+          <%= render "state_form" %>
+        </div>
+      </div>
+  </div>

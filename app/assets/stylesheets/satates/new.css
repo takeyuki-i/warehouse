@@ -1,0 +1,155 @@
+/* 部分テンプレート################################# */
+.state_form{
+  background-color: white;
+  width: calc(100vw - 200px);
+  overflow: scroll;
+  border: solid 1px white;
+}
+
+/* 部分テンプレート################################# */
+
+.item_id{
+  background-color: white;
+  margin: 10px;
+  width: 300px;
+  padding: 5px;
+}
+
+.state_new{
+  background-color: lightgray;
+  border: solid lightgray 1px;
+  width: 700px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.state_new_image{
+  border: solid black 1px;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  margin: 3px;
+}
+
+.state_quantitiy_index{
+  margin: 10px 0 0 10px;
+}
+
+.state_quantitiy_form{
+  width: 150px;
+  border: solid black 1px ;
+  padding: 2px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 15px;
+  margin: 0 0 0 10px;
+}
+
+.quantitiy_unit{
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  padding-left: 20px;
+  border-radius: 3px;
+  border: solid black 1px ;
+}
+
+.sate_new_item_name{
+  background-color: white;
+  margin: 10px;
+  width: 300px;
+  padding: 5px;
+}
+
+.state_limit_index{
+  margin: 10px 0 0 10px;
+}
+
+.state_limit{
+  border: solid black 1px ;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  margin: 0 0 0 10px;
+}
+
+.state_limit_date_index{
+  margin: 10px 0 0 10px;
+}
+
+.state_limit_date{
+  border: solid black 1px ;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  margin: 0 0 0 10px;
+}
+
+.state_storage_name_index{
+  margin: 10px 0 0 10px;
+}
+
+.state_storage_name{
+  width: 400px;
+  border: solid black 1px ;
+  padding: 2px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 15px;
+  margin: 0 0 0 10px;
+}
+
+.state_storage_address_index{
+  margin: 10px 0 0 10px;
+}
+
+.state_storage_address{
+  width: 400px;
+  border: solid black 1px ;
+  padding: 2px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 15px;
+  margin: 0 0 0 10px;
+}
+
+.state_alarm_index{
+  margin: 10px 0 0 10px;
+}
+
+.state_alarm{
+  border: solid black 1px ;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  margin: 0 0 0 10px;
+}
+
+.state_alarm_date_index{
+  margin: 10px 0 0 10px;
+}
+
+.state_alarm_date{
+  border: solid black 1px ;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  margin: 0 0 0 10px;
+}
+
+.state_submit{
+  width: 60px;
+  border: solid black 2px ;
+  padding: 2px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;}
+
+.subimt_form{
+  margin: 10px;
+}
+
+
+.state_link_box{
+  margin: 10px;
+}

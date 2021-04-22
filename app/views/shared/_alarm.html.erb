@@ -1,0 +1,39 @@
+<%# アラーム表示画面 %>
+<div class = "top_box">
+  <h1 class="show-list hidden" id="alarm-test" >
+    <div>
+      使用期限までの日数
+      <% @items.zip(@states).each do |item,state|%>
+        <%if state.limit_id == 2 %>
+          <% limit_day = state.limit_day.to_date %>
+          <% alarm = limit_day - @today %>
+          <% if alarm <= 10 && 0 <= alarm %>
+            <div>
+              <%= "商品名：#{item.name}" %>
+              <%= "管理ID:#{state.id}"%>
+              <%= "残り日数:#{alarm.to_i}日"%>
+              <%= "使用期限:#{state.limit_day.strftime("%Y年%m月%d日")}"%>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div>
+      ＊使用期限が切れています＊
+      <% @items.zip(@states).each do |item,state|%>
+        <%if state.limit_id == 2 %>
+          <% limit_day = state.limit_day.to_date %>
+          <% alarm = limit_day - @today %>
+          <div>
+            <% if alarm < 0 %>
+              <%= "商品名：#{item.name}" %>
+              <%= "管理ID:#{state.id}"%>
+              <%= "使用期限から:#{alarm.to_i.abs}日経過"%>
+              <%= "使用期限:#{state.limit_day.strftime("%Y年%m月%d日")}"%>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </h1>
+</div>
