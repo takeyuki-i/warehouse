@@ -9,7 +9,9 @@
     <%# メインページ読み込み %>
     <div class="items_form" >
       <div>
+        <div class = "menu_title" >
         商品情報編集
+        </div>
         <%= form_with(model: @item, local: true) do |form| %>
           <div class ="image_select " >
             画像の選択
@@ -22,15 +24,13 @@
             <%= form.text_field :name, placeholder: "商品名" ,class: :new_name_form %>
 
           <div class = "new_item_submit" >
-            <%= form.submit "登録" ,class: :new_submit_form %>
+            <%= form.submit "変更" ,class: :new_submit_form %>
           </div>
         <% end %>
 
         <div class = "top_page_link_base">
-          <%= link_to '戻る', "/items/#{@item.id}",class: "top_page_link" %>
+          <%= link_to '戻る', "/items/#{@item.id}",class: "search_method" %>
         </div>
       </div>
     </div>
   </div>
-
-<%= render "shared/footer" %>

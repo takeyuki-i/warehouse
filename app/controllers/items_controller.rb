@@ -2,33 +2,8 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @today = Date.today
     @states = State.all
   end
-
-    # @state = State.find_by(id: 3)
-    # @item = @state.item.name
-    # binding.pry
-
-  # @item = Item.find(params[:id])
-  # @check_buy = @item.order.present?
-
-
-    # @limit_day = State.find_by(params[1])[:alarm_day]
-    # @limit_day_date = @limit_day.to_date
-    # @alarm_day = @limit_day_date - @today
-
-
-  # @past_diary = Diary.find_by(created_at: Date.today.prev_year.all_day)
-  # @past_diaries = Diary.where(created_at: Date.today.prev_year.all_day)
-  # @today_diary = Diary.find_by(created_at: Date.today.all_day)
-  # @today_diaries = Diary.where(created_at: Date.today.all_day)
-  # @next_diary = Diary.find_by(created_at: Date.today.next_year.all_day)
-  # @next_diaries = Diary.where(created_at: Date.today.next_year.all_day)
-  # # @goals = Goal.where(user_id: LIKE(?) , "#{@diary}")
-  # @goals = Goal.where(user_id: @diary.user_id)
-  # @comment = Comment.new
-  # @comments = @diary.comments.includes(:user)
 
   def new
     @item = Item.new
@@ -73,8 +48,6 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end
-
-
 
   private
 

@@ -3,14 +3,13 @@
   width: calc(100vw - 200px);
   overflow: scroll;
   display: flex;
-  border: solid 1px lightgray;
-
 }
 /* 部分テンプレート################################# */
 
 .show_box{
   margin: 15px;
   background-color: lightgray;
+  border-radius: 5px;
 }
 
 .show_image{
@@ -18,6 +17,9 @@
   background-color: white;
   border: solid black 1px;
   border-radius: 10px;
+  width: 200px;
+  height: 200px;
+
 }
 
 .show_itemname{

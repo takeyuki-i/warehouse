@@ -1,14 +1,11 @@
 .item_box{
-  background-color: lightgray;
+  background-color: #e6e6e6;
   border: solid lightgray 1px;
   height: 250px;
   width: 700px;
   margin: 10px;
   display: flex;
   border-radius: 10px;
-}
-
-.main_page_state_box{
 }
 
 .main_page_link{
@@ -27,44 +24,46 @@
   border-radius: 10px;
   width: 200px;
   height: 200px;
-  margin: 3px;
+  margin: 5px;
 }
 
 .main_table_total{
   margin: 10px;
   padding: 5px;
   display: flex;
-  
+  width: 300px;
 }
 
 .main_table_tr{
-  background-color: darkgrey;
   padding: 5px;
 }
 
 .main_page_state{
-  background-color:darkgreen;
-  margin: 10px;
+  margin: 5px;
 }
 
 .main_page_table_th{
-  background-color:grey ;
-  border: solid darkgrey 1px;
-  padding: 5px;
+  padding: 0 0 0 5px ;
+  text-align: right;
 }
 
 .main_page_state_td{
-  background-color:white;
-  border: solid darkgrey 1px;
   padding: 5px;
+  text-align: left;
 }
 
 .no_image{
   background-color: white;
+  border: solid black 1px;
+  border-radius: 10px;
   width: 200px;
   height: 200px;
-  margin: 5px;
+  margin: 3px;
   padding-top: 80px;
   text-align: center;
   font-size: 30px;
+}
+
+.space{
+  height: 5px;
 }

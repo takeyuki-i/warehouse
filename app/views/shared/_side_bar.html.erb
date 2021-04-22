@@ -2,7 +2,7 @@
   <%# ユーザー情報 %>
   <div class = "name_content">
     <% if user_signed_in? %>
-      <div class = "user_tag">ユーザー名</div>
+      <div class = "user_tag">User</div>
       <%= link_to current_user.name, "#" , class: "name" %>
     <%else%>
       <div> <%= link_to "ログイン", new_user_session_path%></div>
@@ -12,10 +12,11 @@
   <%# コマンドリスト %>
   <div class = "command_list">
     <% if user_signed_in? %>
+      <%= link_to '商品一覧表示', root_path , class: "command" %>
       <%= link_to '商品登録', new_item_path , class: "command" %>
       <%= link_to "サーチ" , search_states_path, class: "command" %>
-      <%= link_to "アラーム" , root_path, class: "command" %>
-      <%= button_to "アラーム発生ボタン" , { controller: 'states', action:'alarm'},{ method: :get , class: "alarm" , id: :alarmid } %>
+      <%= button_to "アラーム発生ボタン" , { controller: 'states', action:'alarm'},{ method: :get , class: "alarm" , id: :alarm_id } %>
+      <%= button_to "メール通知ボタン" , { controller: 'states', action:'alarm'},{ method: :get , class: "alarm" , id: :email_id } %>
     <% else %>
       <%= link_to '新規ユーザー登録ページ', new_user_registration_path, class: "command" %>
     <% end %>

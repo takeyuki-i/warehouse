@@ -6,7 +6,7 @@
 
   <% if @state.id.present?%>
   <div class = "item_id">
-    商品ID <%= @state.id %>
+    ID： <%= @state.id %>
   </div>
   <% end %>
 
@@ -47,11 +47,11 @@
       <%= form.date_select :alarm_day ,{use_month_numbers: true,discard_hour: true,date_separator: '/'}, {class: "state_alarm_date"}  %>
 
     <div class = "subimt_form" >
-        <%= form.submit "登録" ,class: :state_submit %>
+        <%= form.submit "変更" ,class: :state_submit %>
     </div>
 
     <div class = "state_link_box" >
-        <%= link_to '戻る',"/items/#{@item.id}",class: "state_link" %>
+        <%= link_to '戻る',"/items/#{@item.id}",class: "search_method" %>
     </div>
   <% end %>
 

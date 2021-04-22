@@ -8,7 +8,10 @@
     </div>
     <%# メインページ読み込み %>
     <div class="items_form" >
-      <div>商品新規登録
+      <div>
+        <div class = "menu_title" >
+        商品新規登録
+        </div>
         <div class="form">
           <div class ="new_item_regist" >
             <p>新しい商品を登録できます。</p>
@@ -32,12 +35,9 @@
           <% end %>
         </div>
         <div class = "top_page_link_base">
-          <%= link_to '戻る',root_path,class: "top_page_link" %>
         </div>
       </div>
     </div>
 
   </div>
 
-
-  <%= render "shared/footer" %>

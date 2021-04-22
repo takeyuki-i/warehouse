@@ -9,13 +9,13 @@
   <%# メインページ %>
   <div class="show_main" >
     <div class = "show_box">
-      <div>
-        在庫一覧表示
+      <div class = "menu_title" >
+        在庫管理
       </div>
 
       <% if @item.image.present? %>
         <div>
-          <%= image_tag @item.image.variant(resize: '150x150') , class: 'show_image' if @item.image.attached?  %>
+          <%= image_tag @item.image, class: 'show_image' if @item.image.attached?  %>
         </div>
       <% else %>
         <div class = "no_image">
@@ -64,5 +64,3 @@
     </div>
   </div>
 </div>
-
-<%= render "shared/footer" %>
