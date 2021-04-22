@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../alarm")
-require("..")
+require("../email")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
