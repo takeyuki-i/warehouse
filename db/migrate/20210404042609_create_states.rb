@@ -5,8 +5,6 @@ class CreateStates < ActiveRecord::Migration[6.0]
       t.integer :unit_id , null: false
       t.integer :limit_id , null: false
       t.datetime :limit_day , null: false
-      t.integer :alarm_id , null: false
-      t.datetime :alarm_day , null: false
       t.string :storage_name , null: false
       t.string :storage_address , null: false
       t.references :item ,null:false ,foreign_key: true

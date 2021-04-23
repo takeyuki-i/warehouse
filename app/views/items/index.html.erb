@@ -9,11 +9,8 @@
       <%= render "shared/side_bar" %>
     </div>
 
-    <%# アラーム表示画面 %>
-      <%= render "shared/alarm" %>
-
     <%# メインページ読み込み %>
-   <div class="main_page" >
+     <div class="main_page" >
       <% @items.each_with_index do |item,index| %>
         <div class = "item_box" >
           <div class = "main_page_state_box" >
@@ -39,7 +36,7 @@
           <table>
             <tr class = "main_page_state">
               <th class = "main_page_table_th" > index： </th>
-              <td class = "main_page_state_td"> <%= index %> </td>
+              <td class = "main_page_state_td"> <%= index+1 %> </td>
             </tr>
             <tr class = "main_page_state">
               <th class = "main_page_table_th" > ID： </th>
@@ -51,7 +48,16 @@
             </tr>
           </table>
         </div>
+        <div>
+          <div  class = "item_info_index" >
+            商品説明
+          </div>
+          <div  class = "item_info" >
+            <%= item.information%>
+          </div>
         </div>
+                </div>
+
       <% end %>
     </div>
   </div>

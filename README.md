@@ -204,6 +204,7 @@
 | Column           | Type       | Options                         |
 | ---------------- | ---------- | ------------------------------- |
 | name             | string     | null: false                     |
+| information      | text       |                                 |
 | user             | references | null: false , foreign_key: true |
 
 ### Association
@@ -220,6 +221,7 @@
 | email              | string | null: false,unique: true |
 | encrypted_password | string | null: false              |
 | address            | string | null: false              |
+| alarm_email        | string |                          |
 
 ### Association
 
@@ -234,8 +236,6 @@
 | limit_id        | integer    | null: false                     |
 | limit_id        | integer    | null: false                     |
 | limit_day       | datetime   | null: false                     |
-| alarm_id        | integer    | null: false                     |
-| alarm_day       | datetime   | null: false                     |
 | storage_name    | string     | null: false                     |
 | storage_address | string     | null: false                     |
 | item            | references | null: false , foreign_key: true |

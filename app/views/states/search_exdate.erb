@@ -9,83 +9,91 @@
   <%# メインページ %>
   <div class="show_main" >
     <div class = "show_box">
-         <div class = "menu_title" >
+      <div class = "menu_title" >
         使用期限優先
       </div>
 
-<%= image_tag @item.image.variant(resize: '150x150') , class: :show_image %>
+      <div class = "image_and_info">
+        <%= image_tag @item.image , class: :show_image %>
+        <div>
+          <div  class = "item_info" >
+            <%= @item.information %>
+          </div>
+        </div>
+      </div>
 
-<div class = "show_itemname">
-  商品名：<%= @item.name %>
-</div>
 
-<div class = "show_frame_total">
-  <%= link_to 'edit(編集)',"/items/#{@item.id}/edit",method: :get  , class: :show_frame %>
-  <%= link_to 'Delete(削除)',"/items/#{@item.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
-  <%= link_to '在庫追加',"/items/#{@item.id}/states/new"  , class: :show_frame %>
-  <%= link_to '戻る',search_states_path , class: :show_frame %>
-</div>
+      <div class = "show_itemname">
+        商品名：<%= @item.name %>
+      </div>
 
-<table class = "show_table_total">
-  <tr class = "show_table_tr">
-    <th class = "show_table_th" >出荷順</th>
-    <th class = "show_table_th" >id</th>
-    <th class = "show_table_th" >数量</th>
-    <th class = "show_table_th" >保管場所</th>
-    <th class = "show_table_th" >住所</th>
-    <th class = "show_table_th" >入庫日</th>
-    <th class = "show_table_th" >使用期限</th>
-  </tr>
+      <div class = "show_frame_total">
+        <%= link_to 'edit(編集)',"/items/#{@item.id}/edit",method: :get  , class: :show_frame %>
+        <%= link_to 'Delete(削除)',"/items/#{@item.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
+        <%= link_to '在庫追加',"/items/#{@item.id}/states/new"  , class: :show_frame %>
+        <%= link_to '戻る',search_states_path , class: :show_frame %>
+      </div>
 
-  <% @states.each_with_index do |state,index| %>
-    <% if state.limit_id == 2 %>
-      <tr class = "show_state">
-        <td class = show_state_td><%= index + 1 %></td>
-        <td class = show_state_td><%= state.id %></td>
-        <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
-        <td class = show_state_td><%= state.storage_name %></td>
-        <td class = show_state_td><%= state.storage_address %></td>
-        <td class = show_state_td><%= state.created_at.strftime("%Y年%m月%d日") %></td>
-          <% if state.limit_id == 3 %>
-            <td class = show_state_td><%= state.limit.name %></td>
-          <% else state.limit_id == 2 %>
-            <td class = show_state_td><%= state.limit_day.strftime("%Y年%m月%d日") %></td>
+      <table class = "show_table_total">
+        <tr class = "show_table_tr">
+          <th class = "show_table_th" >出荷順</th>
+          <th class = "show_table_th" >id</th>
+          <th class = "show_table_th" >数量</th>
+          <th class = "show_table_th" >保管場所</th>
+          <th class = "show_table_th" >住所</th>
+          <th class = "show_table_th" >入庫日</th>
+          <th class = "show_table_th" >使用期限</th>
+        </tr>
+
+        <% @states.each_with_index do |state,index| %>
+          <% if state.limit_id == 2 %>
+            <tr class = "show_state">
+              <td class = show_state_td><%= index + 1 %></td>
+              <td class = show_state_td><%= state.id %></td>
+              <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
+              <td class = show_state_td><%= state.storage_name %></td>
+              <td class = show_state_td><%= state.storage_address %></td>
+              <td class = show_state_td><%= state.created_at.strftime("%Y年%m月%d日") %></td>
+                <% if state.limit_id == 3 %>
+                  <td class = show_state_td><%= state.limit.name %></td>
+                <% else state.limit_id == 2 %>
+                  <td class = show_state_td><%= state.limit_day.strftime("%Y年%m月%d日") %></td>
+                <% end %>
+              <td class = show_state_td><%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :show_frame %>
+              <td class = show_state_td><%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
+            </tr>
           <% end %>
-        <td class = show_state_td><%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :show_frame %>
-        <td class = show_state_td><%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
-      </tr>
-    <% end %>
-  <% end %>
-</table>
+        <% end %>
+      </table>
 
-<table class = "show_table_total">
-  <tr class = "show_table_tr">
-    <th class = "show_table_th" >id</th>
-    <th class = "show_table_th" >数量</th>
-    <th class = "show_table_th" >保管場所</th>
-    <th class = "show_table_th" >住所</th>
-    <th class = "show_table_th" >入庫日</th>
-    <th class = "show_table_th" >使用期限</th>
-  </tr>
+      <table class = "show_table_total">
+        <tr class = "show_table_tr">
+          <th class = "show_table_th" >id</th>
+          <th class = "show_table_th" >数量</th>
+          <th class = "show_table_th" >保管場所</th>
+          <th class = "show_table_th" >住所</th>
+          <th class = "show_table_th" >入庫日</th>
+          <th class = "show_table_th" >使用期限</th>
+        </tr>
 
-  <% @states.each do |state| %>
-    <% if state.limit_id == 3 %>
-      <tr class = "show_state">
-        <td class = show_state_td><%= state.id %></td>
-        <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
-        <td class = show_state_td><%= state.storage_name %></td>
-        <td class = show_state_td><%= state.storage_address %></td>
-        <td class = show_state_td><%= state.created_at.strftime("%Y年%m月%d日") %></td>
+        <% @states.each do |state| %>
           <% if state.limit_id == 3 %>
-            <td class = show_state_td><%= state.limit.name %></td>
-          <% else state.limit_id == 2 %>
-            <td class = show_state_td><%= state.limit_day.strftime("%Y年%m月%d日") %></td>
+            <tr class = "show_state">
+              <td class = show_state_td><%= state.id %></td>
+              <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
+              <td class = show_state_td><%= state.storage_name %></td>
+              <td class = show_state_td><%= state.storage_address %></td>
+              <td class = show_state_td><%= state.created_at.strftime("%Y年%m月%d日") %></td>
+                <% if state.limit_id == 3 %>
+                  <td class = show_state_td><%= state.limit.name %></td>
+                <% else state.limit_id == 2 %>
+                  <td class = show_state_td><%= state.limit_day.strftime("%Y年%m月%d日") %></td>
+                <% end %>
+              <td class = show_state_td><%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
+           </tr>
           <% end %>
-        <td class = show_state_td><%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
-      </tr>
-    <% end %>
-  <% end %>
-</table>
+        <% end %>
+      </table>
     </div>
   </div>
 </div>

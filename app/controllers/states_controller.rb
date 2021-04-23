@@ -55,8 +55,11 @@ class StatesController < ApplicationController
   end
 
   def alarm
-    @user_mail = current_user.email
-    if AlarmMailer.send_confirm_to_user(@user_mail).deliver
+    @items = Item.all
+    @states = State.all
+
+    @user_mail = current_user.alarm_email
+    if AlarmMailer.alarm_mail(@user_mail,@items,@states,@today).deliver
       redirect_to root_path
     end
   end
@@ -64,7 +67,7 @@ class StatesController < ApplicationController
   private
 
   def state_params
-    params.require(:state).permit(:quantity,:unit_id,:limit_id,:limit_day,:alarm_id,:alarm_day,:storage_name,:storage_address).merge(item_id: params[:item_id])
+    params.require(:state).permit(:quantity,:unit_id,:limit_id,:limit_day,:storage_name,:storage_address).merge(item_id: params[:item_id])
   end
 
   def set_item
