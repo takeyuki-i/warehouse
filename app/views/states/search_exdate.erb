@@ -45,10 +45,11 @@
           <th class = "show_table_th" >使用期限</th>
         </tr>
 
-        <% @states.each_with_index do |state,index| %>
+        <% index = 1 %>
+        <% @states.each do |state| %>
           <% if state.limit_id == 2 %>
             <tr class = "show_state">
-              <td class = show_state_td><%= index + 1 %></td>
+              <td class = show_state_td><%= index += 1 %></td>
               <td class = show_state_td><%= state.id %></td>
               <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
               <td class = show_state_td><%= state.storage_name %></td>
@@ -62,6 +63,8 @@
               <td class = show_state_td><%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :show_frame %>
               <td class = show_state_td><%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
             </tr>
+          <% else state.limit_id == 3 %>
+            <% index -= 1 %>
           <% end %>
         <% end %>
       </table>

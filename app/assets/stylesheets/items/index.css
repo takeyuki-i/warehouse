@@ -80,3 +80,9 @@
   background-color: white;
   text-align: start;
 }
+
+.no_item{
+  margin: 100px 0 0 30px;
+  font-size: large;
+  color: gray;
+}

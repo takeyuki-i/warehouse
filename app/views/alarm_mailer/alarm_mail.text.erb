@@ -1,27 +1,21 @@
+使用期限の近い製品をお知らせします。
+
 <% @items.zip(@states).each do |item,state|%>
-  <% limit_day = state.limit_day.to_date %>
-  <% alarm = limit_day - @today %>
+  <% if state.limit_id == 2 %>
+    <% limit_day = state.limit_day.to_date %>
+    <% alarm = limit_day - @today %>
     <% if alarm <= 10 && 0 <= alarm %>
+      <%= "-------------------------------"%>
       <%= "Item：#{item.name}" %>
-      <table class = "show_table_total">
-        <tr class = "show_table_tr">
-          <th class = "show_table_th" >ID</th>
-          <th class = "show_table_th" >残り日数</th>
-          <th class = "show_table_th" >使用期限</th>
-        </tr>
-        <tr class = "show_state">
-          <td class = show_state_td><%= "#{state.id}"%></td>
-          <td class = show_state_td><%= "#{alarm.to_i}日"%></td>
-          <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
-        </tr>
-      </table>
+      <%= "ID: #{state.id}" %>
+      <%= "残り日数:#{alarm.to_i}日"%>
+      <%= "使用期限:#{state.limit_day.strftime("%Y年%m月%d日")}"%>
+    <% else alarm < 0 %>
+      <%= "-------------------------------"%>
+      <%= "Item：#{item.name}" %>
+      <%= "ID: #{state.id}" %>
+      <%= "＊使用期限切れ＊:#{alarm.to_i}日"%>
+      <%= "使用期限:#{state.limit_day.strftime("%Y年%m月%d日")}"%>
     <% end %>
+  <% end %>
 <% end %>
-
-様
-
-○○への会員登録が完了しました。
-マイページはこちら
-
-○○への会員登録が完了しました。
-マイページはこちら
