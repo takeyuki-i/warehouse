@@ -48,13 +48,14 @@
 
 /* アラーム通知################################# */
 .show-list{
-	width:50%;
-	margin:1.5em auto 0;
-	padding:10px 20px;
+  width: 500px ;
+	margin:2.0em auto 0;
+	padding:20px 30px;
 	border:2px solid #aaa;
-	background:#fff;
+	background:lightyellow;
 	z-index:2;
   position:fixed;
+  margin: 50px;
 }
 
 .hidden{

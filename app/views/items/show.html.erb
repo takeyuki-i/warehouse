@@ -13,6 +13,8 @@
         在庫管理
       </div>
 
+
+    <div class = "image_and_info">
       <% if @item.image.present? %>
         <div>
           <%= image_tag @item.image, class: 'show_image' if @item.image.attached?  %>
@@ -23,8 +25,15 @@
         </div>
       <% end %>
 
+        <div>
+          <div  class = "item_info" >
+            <%= @item.information %>
+          </div>
+        </div>
+      </div>
+
       <div class = "show_itemname">
-        商品名：<%= @item.name %>
+        Item：<%= @item.name %>
       </div>
 
       <div class = "show_frame_total">
@@ -36,7 +45,7 @@
 
       <table class = "show_table_total">
         <tr class = "show_table_tr">
-          <th class = "show_table_th" >id</th>
+          <th class = "show_table_th" >ID</th>
           <th class = "show_table_th" >入庫日</th>
           <th class = "show_table_th" >数量</th>
           <th class = "show_table_th" >保管場所</th>

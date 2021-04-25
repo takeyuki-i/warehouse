@@ -54,21 +54,28 @@
             </div>
           </div>
           <div  class = "main_table_total" >
-
-          <table>
-            <tr class = "main_page_state">
-              <th class = "main_page_table_th" > index： </th>
-              <td class = "main_page_state_td"> <%= index %> </td>
-            </tr>
-            <tr class = "main_page_state">
-              <th class = "main_page_table_th" > ID： </th>
-              <td class = "main_page_state_td"> <%= item.id%> </td>
-            </tr>
-            <tr class = "main_page_state">
-              <th class = "main_page_table_th" > Item： </th>
-              <td class = "main_page_state_td"> <%= item.name%> </td>
-            </tr>
-          </table>
+            <table>
+              <tr class = "main_page_state">
+                <th class = "main_page_table_th" > index： </th>
+                <td class = "main_page_state_td"> <%= index %> </td>
+              </tr>
+              <tr class = "main_page_state">
+                <th class = "main_page_table_th" > ID： </th>
+                <td class = "main_page_state_td"> <%= item.id%> </td>
+              </tr>
+              <tr class = "main_page_state">
+                <th class = "main_page_table_th" > Item： </th>
+                <td class = "main_page_state_td"> <%= item.name%> </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <div  class = "item_info_index" >
+              商品説明
+            </div>
+            <div  class = "item_info" >
+              <%= item.information%>
+            </div>
           </div>
         </div>
       <% end %>

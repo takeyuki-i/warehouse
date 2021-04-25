@@ -1,18 +1,19 @@
 <%= render "shared/header" %>
 
-  <%# 部分テンプレート %>
-  <div class="tatal_page">
-    <%# サイドバー読み込み %>
-    <div class="side_bar" >
-      <%= render "shared/side_bar" %>
-    </div>
-    <%# メインページ読み込み %>
-    <div class="items_form" >
-      <div>
-        <div class = "menu_title" >
+<%# 部分テンプレート %>
+<div class="tatal_page">
+  <%# サイドバー読み込み %>
+  <div class="side_bar" >
+    <%= render "shared/side_bar" %>
+  </div>
+
+  <%# メインページ読み込み %>
+  <div class="items_form" >
+    <div>
+      <div class = "menu_title" >
         商品情報編集
-        </div>
-        <%= form_with(model: @item, local: true) do |form| %>
+      </div>
+      <%= form_with(model: @item, local: true) do |form| %>
           <div class ="image_select " >
             画像の選択
           </div>
@@ -21,16 +22,21 @@
           <div class = "new_item_name" >
             商品の名称
           </div>
-            <%= form.text_field :name, placeholder: "商品名" ,class: :new_name_form %>
+          <%= form.text_field :name, placeholder: "名称を入力して下さい" ,class: :new_name_form %>
+
+          <div class = "new_item_name" >
+            商品の説明
+          </div>
+          <%= form.text_area :information, placeholder: "商品の説明を入力出来ます。" ,class: :new_info_form %>
 
           <div class = "new_item_submit" >
             <%= form.submit "変更" ,class: :new_submit_form %>
           </div>
-        <% end %>
+      <% end %>
 
-        <div class = "top_page_link_base">
-          <%= link_to '戻る', "/items/#{@item.id}",class: "search_method" %>
-        </div>
+      <div class = "top_page_link_base">
+        <%= link_to '戻る', "/items/#{@item.id}",class: "search_method" %>
       </div>
     </div>
   </div>
+</div>

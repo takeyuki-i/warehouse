@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
 
     if @item.save
       @user_mail = current_user.email
-      AlarmMailer.send_confirm_to_user(@user_mail).deliver
       redirect_to root_path
     else
       render :new
@@ -52,7 +51,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name,:image).merge(user_id: current_user.id)
+    params.require(:item).permit(:name,:information,:image).merge(user_id: current_user.id)
   end
 
 

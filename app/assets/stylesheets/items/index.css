@@ -2,7 +2,7 @@
   background-color: #e6e6e6;
   border: solid lightgray 1px;
   height: 250px;
-  width: 700px;
+  width: 850px;
   margin: 10px;
   display: flex;
   border-radius: 10px;
@@ -31,7 +31,7 @@
   margin: 10px;
   padding: 5px;
   display: flex;
-  width: 300px;
+  width: 200px;
 }
 
 .main_table_tr{
@@ -66,4 +66,23 @@
 
 .space{
   height: 5px;
+}
+
+.item_info_index {
+  margin: 5px 0 0 5px;
+}
+
+.item_info{
+  margin: 10px 0 0 5px;
+  padding: 5px;
+  width: 250px;
+  height: 200px;
+  background-color: white;
+  text-align: start;
+}
+
+.no_item{
+  margin: 100px 0 0 30px;
+  font-size: large;
+  color: gray;
 }

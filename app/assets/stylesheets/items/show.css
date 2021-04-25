@@ -19,7 +19,10 @@
   border-radius: 10px;
   width: 200px;
   height: 200px;
+}
 
+.image_and_info{
+  display: flex;
 }
 
 .show_itemname{

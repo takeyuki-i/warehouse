@@ -10,48 +10,98 @@
     </div>
 
     <%# アラーム表示画面 %>
-      <%= render "shared/alarm" %>
+    <div class="hidden" id="alarm-test" >
+      <div class = "show-list">
+        <div>
+            <% @items.zip(@states).each do |item,state|%>
+                <% if state.limit_id == 2 %>
+                  <% limit_day = state.limit_day.to_date %>
+                  <% alarm = limit_day - @today %>
+                  <% if alarm <= 10 && 0 <= alarm %>
+                    <%= "Item：#{item.name}" %>
+                    <table class = "show_table_total">
+                      <tr class = "show_table_tr">
+                       <th class = "show_table_th" >ID</th>
+                        <th class = "show_table_th" >残り日数</th>
+                        <th class = "show_table_th" >使用期限</th>
+                      </tr>
+                      <tr class = "show_state">
+                        <td class = show_state_td><%= "#{state.id}"%></td>
+                        <td class = show_state_td><%= "#{alarm.to_i}日"%></td>
+                        <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
+                      </tr>
+                    </table>
+                  <% else alarm < 0 %>
+                    <%= "Item：#{item.name}" %>
+                    <table class = "show_table_total">
+                      <tr class = "show_table_tr">
+                        <th class = "show_table_th" >ID</th>
+                        <th class = "show_table_th" >＊使用期限切れ＊</th>
+                        <th class = "show_table_th" >使用期限</th>
+                      </tr>
+                      <tr class = "show_state">
+                        <td class = show_state_td><%= "#{state.id}"%></td>
+                        <td class = show_state_td><%= "期限から【#{alarm.to_i.abs}日】経過"%></td>
+                        <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
+                      </tr>
+                    </table>
+                  <% end %>
+                <% end %>
+            <% end %>
+        </div>
+      </div> 
+    </div>
 
     <%# メインページ読み込み %>
-   <div class="main_page" >
+    <div class="main_page" >
       <% @items.each_with_index do |item,index| %>
-        <div class = "item_box" >
-          <div class = "main_page_state_box" >
-            <% if item.image.present? %>
-              <div>
-               <%= image_tag item.image , class: 'image_box' if item.image.attached?  %>
+        <% if current_user.id == item.user_id %>
+          <div class = "item_box" >
+              <div class = "main_page_state_box" >
+                <% if item.image.present? %>
+                  <div>
+                   <%= image_tag item.image , class: 'image_box' if item.image.attached?  %>
+                  </div>
+                    <div>
+                    <%= link_to '在庫管理',"/items/#{item.id}" , class: :search_method  %>
+                  </div>
+                <% else %>
+                    <div class = "no_image">
+                      Noimage
+                    </div>
+                  <div class = "space">
+                  </div>
+                  <div>
+                    <%= link_to '在庫管理',"/items/#{item.id}" , class: :search_method  %>
+                  </div>
+                <% end %>
               </div>
-              <div>
-                <%= link_to '在庫管理',"/items/#{item.id}" , class: :search_method  %>
+              <div  class = "main_table_total" >
+              <table>
+                <tr class = "main_page_state">
+                  <th class = "main_page_table_th" > index： </th>
+                  <td class = "main_page_state_td"> <%= index+1 %> </td>
+                </tr>
+                <tr class = "main_page_state">
+                  <th class = "main_page_table_th" > ID： </th>
+                  <td class = "main_page_state_td"> <%= item.id%> </td>
+                </tr>
+                <tr class = "main_page_state">
+                  <th class = "main_page_table_th" > Item： </th>
+                  <td class = "main_page_state_td"> <%= item.name%> </td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <div  class = "item_info_index" >
+                商品説明
               </div>
-            <% else %>
-                <div class = "no_image">
-                  Noimage
-                </div>
-              <div class = "space">
+              <div  class = "item_info" >
+                <%= item.information%>
               </div>
-              <div>
-                <%= link_to '在庫管理',"/items/#{item.id}" , class: :search_method  %>
-              </div>
-            <% end %>
+            </div>
           </div>
-          <div  class = "main_table_total" >
-          <table>
-            <tr class = "main_page_state">
-              <th class = "main_page_table_th" > index： </th>
-              <td class = "main_page_state_td"> <%= index %> </td>
-            </tr>
-            <tr class = "main_page_state">
-              <th class = "main_page_table_th" > ID： </th>
-              <td class = "main_page_state_td"> <%= item.id%> </td>
-            </tr>
-            <tr class = "main_page_state">
-              <th class = "main_page_table_th" > Item： </th>
-              <td class = "main_page_state_td"> <%= item.name%> </td>
-            </tr>
-          </table>
-        </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>

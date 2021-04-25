@@ -1,7 +1,8 @@
 .items_form{
-  border: solid 1px lightgray;
   width: calc(100vw - 200px);
-  padding: 15px;
+  padding: 10px;
+  margin: 10px;
+  width: 500px;
 }
 
 .content_box{
@@ -37,6 +38,15 @@
   padding: 3px;
   border-radius: 5px;
 }
+
+.new_info_form{
+  margin: 0 0 0 10px;
+  padding: 3px;
+  border-radius: 5px;
+  width: 250px;
+  height: 200px;
+}
+
 
 .new_submit_form{
   width: 60px;
