@@ -79,6 +79,7 @@
   height: 200px;
   background-color: white;
   text-align: start;
+  white-space: pre-wrap;
 }
 
 .no_item{

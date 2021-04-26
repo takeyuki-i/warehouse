@@ -15,7 +15,7 @@
       <%= link_to '商品一覧表示', root_path , class: "command" %>
       <%= link_to '商品登録', new_item_path , class: "command" %>
       <%= link_to "サーチ" , search_states_path, class: "command" %>
-      <%= button_to "アラーム発生ボタン" , { controller: 'states', action:'alarm'},{ method: :get , class: "alarm" , id: :alarm_id } %>
+      <%= button_to "アラーム発生ボタン" , {},{ method: :get , class: "alarm" , id: :alarm_id } %>
       <%= button_to "メール通知ボタン" , { controller: 'states', action:'alarm'},{ method: :get , class: "alarm" , id: :email_id } %>
     <% else %>
       <%= link_to '新規ユーザー登録ページ', new_user_registration_path, class: "command" %>
