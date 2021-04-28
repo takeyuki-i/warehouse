@@ -1,4 +1,48 @@
 <div>
+    <%# アラーム表示画面 %>
+    <div class="hidden" id="alarm" >
+      <div class = "show-list">
+          <button type="button" id="alarm_hidden_id">閉じる</button>
+        <div>
+          <% @items.zip(@states).each do |item,state|%>
+            <% if state.limit_id == 2 %>
+              <% limit_day = state.limit_day.to_date %>
+              <% alarm = limit_day - @today %>
+              <% if alarm <= 10 && 0 <= alarm %>
+                <%= "Item：#{item.name}" %>
+                <table class = "show_table_total">
+                  <tr class = "show_table_tr">
+                   <th class = "show_table_th" >ID</th>
+                    <th class = "show_table_th" >残り日数</th>
+                    <th class = "show_table_th" >使用期限</th>
+                  </tr>
+                  <tr class = "show_state">
+                    <td class = show_state_td><%= "#{state.id}"%></td>
+                    <td class = show_state_td><%= "#{alarm.to_i}日"%></td>
+                    <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
+                  </tr>
+                 </table>
+              <% else alarm < 0 %>
+                <%= "Item：#{item.name}" %>
+                <table class = "show_table_total">
+                  <tr class = "show_table_tr">
+                    <th class = "show_table_th" >ID</th>
+                    <th class = "show_table_th" >＊使用期限切れ＊</th>
+                    <th class = "show_table_th" >使用期限</th>
+                  </tr>
+                  <tr class = "show_state">
+                    <td class = show_state_td><%= "#{state.id}"%></td>
+                    <td class = show_state_td><%= "期限から【#{alarm.to_i.abs}日】経過"%></td>
+                    <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
+                  </tr>
+                </table>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div> 
+    </div>
+
   <%# ユーザー情報 %>
   <div class = "name_content">
     <% if user_signed_in? %>
@@ -15,7 +59,7 @@
       <%= link_to '商品一覧表示', root_path , class: "command" %>
       <%= link_to '商品登録', new_item_path , class: "command" %>
       <%= link_to "サーチ" , search_states_path, class: "command" %>
-      <%= button_to "アラーム発生ボタン" , {},{ method: :get , class: "alarm" , id: :alarm_id } %>
+      <button type="button" id="alarm_id" class="alarm" > アラーム発生ボタン</button>
       <%= button_to "メール通知ボタン" , { controller: 'states', action:'alarm'},{ method: :get , class: "alarm" , id: :email_id } %>
     <% else %>
       <%= link_to '新規ユーザー登録ページ', new_user_registration_path, class: "command" %>

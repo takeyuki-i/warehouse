@@ -1,8 +1,6 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
-    @states = State.all
   end
 
   def new

@@ -60,6 +60,9 @@
 
 .hidden{
   display: none;
+  position: absolute;
+  top: 20px;
+  left: 180px;
 }
 
 /* アラーム通知################################# */

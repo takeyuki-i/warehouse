@@ -1,11 +1,11 @@
 window.addEventListener('load', function(){
 
-  const pullDownButton = document.getElementById("email_id")
-    
-  pullDownButton.addEventListener('mouseover', function(){
-     pullDownButton.setAttribute("style","background-color:#FFBEDA;")
-   })
-  pullDownButton.addEventListener('mouseout', function(){
-     pullDownButton.setAttribute("style","background-color;#FFBEDA")
-   })
+const ButtonAction = document.getElementById("email_id")
+
+ButtonAction.addEventListener('mouseover', function(){
+    ButtonAction.setAttribute("style","background-color:#FFBEDA;")
   })
+  ButtonAction.addEventListener('mouseout', function(){
+    ButtonAction.removeAttribute("style","background-color;#FFBEDA")
+  })
+})
