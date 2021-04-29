@@ -1,0 +1,67 @@
+<%= render "shared/header" %>
+
+
+<%# 部分テンプレート %>
+<div class="tatal_page">
+
+    <%# サイドバー読み込み %>
+    <div class="side_bar" >
+      <%= render "shared/side_bar" %>
+    </div>
+
+<%# アラーム表示画面 %>
+<div>
+  <%if @state.nil? %>
+    <table class = "show_table_total">
+      <tr class = "show_table_tr">
+        <th class = "show_table_th" >Item</th>
+        <th class = "show_table_th" >ID</th>
+        <th class = "show_table_th" >残り日数</th>
+        <th class = "show_table_th" >数量</th>
+        <th class = "show_table_th" >使用期限</th>
+      </tr>
+      <% @states.each do |state|%>
+        <% if state.limit_id == 2 %>
+          <% limit_day = state.limit_day.to_date %>
+          <% alarm = limit_day - @today %>
+          <% if alarm <= 10 && 0 <= alarm %>
+            <tr class = "show_state">
+              <td class = show_state_td><%= "#{state.item.name}"%></td>
+              <td class = show_state_td><%= "#{state.id}"%></td>
+              <td class = show_state_td><%= "#{alarm.to_i}日"%></td>
+              <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
+              <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    </table>
+    <table class = "show_table_total">
+      <tr class = "show_table_tr">
+        <th class = "show_table_th" >Item</th>
+        <th class = "show_table_th" >ID</th>
+        <th class = "show_table_th" >残り日数</th>
+        <th class = "show_table_th" >数量</th>
+        <th class = "show_table_th" >使用期限</th>
+      </tr>
+      <% @states.each do |state|%>
+        <% if state.limit_id == 2 %>
+          <% limit_day = state.limit_day.to_date %>
+          <% alarm = limit_day - @today %>
+          <% if alarm < 0 %>
+            <tr class = "show_state">
+              <td class = show_state_td><%= "#{state.item.name}"%></td>
+              <td class = show_state_td><%= "#{state.id}"%></td>
+              <td class = show_state_td><%= "期限から【#{alarm.to_i.abs}日】経過"%></td>
+              <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
+              <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    </table>
+  <% else %>
+    なし
+  <% end %>
+</div>
+    </div>

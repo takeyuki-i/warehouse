@@ -53,11 +53,7 @@
               <td class = show_state_td><%= state.storage_name %></td>
               <td class = show_state_td><%= state.storage_address %></td>
               <td class = show_state_td><%= state.created_at.strftime("%Y年%m月%d日") %></td>
-                <% if state.limit_id == 3 %>
-                  <td class = show_state_td><%= state.limit.name %></td>
-                <% else state.limit_id == 2 %>
-                  <td class = show_state_td><%= state.limit_day.strftime("%Y年%m月%d日") %></td>
-                <% end %>
+              <td class = show_state_td><%= state.limit_day.strftime("%Y年%m月%d日") %></td>
               <td class = show_state_td><%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :show_frame %>
               <td class = show_state_td><%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
             </tr>
@@ -85,11 +81,8 @@
               <td class = show_state_td><%= state.storage_name %></td>
               <td class = show_state_td><%= state.storage_address %></td>
               <td class = show_state_td><%= state.created_at.strftime("%Y年%m月%d日") %></td>
-                <% if state.limit_id == 3 %>
-                  <td class = show_state_td><%= state.limit.name %></td>
-                <% else state.limit_id == 2 %>
-                  <td class = show_state_td><%= state.limit_day.strftime("%Y年%m月%d日") %></td>
-                <% end %>
+              <td class = show_state_td><%= state.limit.name %></td>
+              <td class = show_state_td><%= link_to "編集" , "/items/#{@item.id}/states/#{state.id}/edit" , class: :show_frame %>
               <td class = show_state_td><%= link_to '削除',"/items/#{@item.id}/states/#{state.id}",method: :delete , data: { confirm: '削除してよいですか？' }  , class: :show_frame %>
            </tr>
           <% end %>

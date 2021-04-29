@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'alarm'
+      get 'search_limit'
     end
     member do
       get 'search_firstinout'

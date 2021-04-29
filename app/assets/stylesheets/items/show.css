@@ -10,6 +10,7 @@
   margin: 15px;
   background-color: lightgray;
   border-radius: 5px;
+  width: calc(100vw - 300px);
 }
 
 .show_image{
@@ -56,7 +57,6 @@
 }
 
 .show_table_th{
-  background-color: gray;
   border: solid black 2px;
   padding: 5px;
 }

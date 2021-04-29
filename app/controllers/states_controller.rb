@@ -64,6 +64,10 @@ class StatesController < ApplicationController
     end
   end
 
+  def search_limit
+    @states = State.all.order("item_id ASC")
+  end
+
   private
 
   def state_params

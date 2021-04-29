@@ -1,6 +1,10 @@
 <%= render "shared/header" %>
 <%# 部分テンプレート %>
-<div class = sing_in_base>
+<div class="sing_in_base">
+  <img src="/assets/top_page.jpg" alt="トップページ" title="top_page" class="top_image">
+  <div class="sing_in_page">
+
+
   <%# メインページ読み込み %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="email_field">
@@ -22,6 +26,10 @@
     </div>
     <div class = "devise_link" >
       <%= render "devise/shared/links" %>
+      <%= link_to "トップページ" , "/"%>
     </div>
   <% end %>
 </div>
+
+</div>
+
