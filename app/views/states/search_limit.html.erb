@@ -60,6 +60,12 @@
         <% end %>
       <% end %>
     </table>
+    <% @test.each do |test| %>
+      <%= test.id %>
+      <%= test.unit_id %>
+      <%= test.limit_id %>
+      <%= test.storage_name %>
+            <% end %>
   <% else %>
     なし
   <% end %>

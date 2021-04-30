@@ -19,7 +19,4 @@ class State < ApplicationRecord
   belongs_to :limit
   belongs_to :unit
 
-  def self.search
-  end
-
 end
