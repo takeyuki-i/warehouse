@@ -66,32 +66,25 @@ class StatesController < ApplicationController
 
   def search_limit
     @states = State.all.order("item_id ASC")
-    @test = []
+    @under_limit = []
+    @under_day_alarm = []
+    @over_limit = []
+    @over_day_alarm = []
     @states.each do |state|
       if state.limit_id == 2
-          limit_day = state.limit_day.to_date
-          alarm = limit_day - @today
-          if alarm < 0
-            @test << state
-          end
+        limit_day = state.limit_day.to_date
+        alarm = limit_day - @today
+        if alarm <= 10 && 0 <= alarm
+          @under_limit << state
+          @under_day_alarm << alarm
+        else alarm < 0
+          @over_limit << state
+          @over_day_alarm << alarm
+        end
       end
     end
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   private
 
   def state_params

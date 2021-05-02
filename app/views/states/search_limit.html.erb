@@ -9,65 +9,51 @@
       <%= render "shared/side_bar" %>
     </div>
 
-<%# アラーム表示画面 %>
-<div>
+  <%# アラーム表示画面 %>
   <%if @state.nil? %>
-    <table class = "show_table_total">
-      <tr class = "show_table_tr">
-        <th class = "show_table_th" >Item</th>
-        <th class = "show_table_th" >ID</th>
-        <th class = "show_table_th" >残り日数</th>
-        <th class = "show_table_th" >数量</th>
-        <th class = "show_table_th" >使用期限</th>
-      </tr>
-      <% @states.each do |state|%>
-        <% if state.limit_id == 2 %>
-          <% limit_day = state.limit_day.to_date %>
-          <% alarm = limit_day - @today %>
-          <% if alarm <= 10 && 0 <= alarm %>
+    <div class = "alarm_total_base">
+      <div class = "under_table_base">
+        <table class = "show_table_total">
+          <tr class = "show_table_tr">
+            <th class = "show_table_th" >Item</th>
+            <th class = "show_table_th" >ID</th>
+            <th class = "show_table_th" >残り日数</th>
+            <th class = "show_table_th" >数量</th>
+            <th class = "show_table_th" >使用期限</th>
+          </tr>
+          <% @under_limit.zip(@under_day_alarm) do |under_limit,under_day_alarm|%>
             <tr class = "show_state">
-              <td class = show_state_td><%= "#{state.item.name}"%></td>
-              <td class = show_state_td><%= "#{state.id}"%></td>
-              <td class = show_state_td><%= "#{alarm.to_i}日"%></td>
-              <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
-              <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
+              <td class = show_state_td><%= "#{under_limit.item.name}"%></td>
+              <td class = show_state_td><%= "#{under_limit.id}"%></td>
+              <td class = show_state_td><%= "#{under_day_alarm.to_i}日"%></td>
+              <td class = show_state_td><%= under_limit.quantity %><%= under_limit.unit.name %></td>
+              <td class = show_state_td><%= "#{under_limit.limit_day.strftime("%Y年%m月%d日")}"%></td>
             </tr>
           <% end %>
-        <% end %>
-      <% end %>
-    </table>
-    <table class = "show_table_total">
-      <tr class = "show_table_tr">
-        <th class = "show_table_th" >Item</th>
-        <th class = "show_table_th" >ID</th>
-        <th class = "show_table_th" >残り日数</th>
-        <th class = "show_table_th" >数量</th>
-        <th class = "show_table_th" >使用期限</th>
-      </tr>
-      <% @states.each do |state|%>
-        <% if state.limit_id == 2 %>
-          <% limit_day = state.limit_day.to_date %>
-          <% alarm = limit_day - @today %>
-          <% if alarm < 0 %>
+        </table>
+      </div>
+      <div class = "over_table_base">
+        <table class = "show_table_total">
+          <tr class = "show_table_tr">
+            <th class = "show_table_th" >Item</th>
+            <th class = "show_table_th" >ID</th>
+            <th class = "show_table_th" >残り日数</th>
+            <th class = "show_table_th" >数量</th>
+            <th class = "show_table_th" >使用期限</th>
+          </tr>
+          <% @over_limit.zip(@over_day_alarm) do |over_limit,over_day_alarm|%>
             <tr class = "show_state">
-              <td class = show_state_td><%= "#{state.item.name}"%></td>
-              <td class = show_state_td><%= "#{state.id}"%></td>
-              <td class = show_state_td><%= "期限から【#{alarm.to_i.abs}日】経過"%></td>
-              <td class = show_state_td><%= state.quantity %><%= state.unit.name %></td>
-              <td class = show_state_td><%= "#{state.limit_day.strftime("%Y年%m月%d日")}"%></td>
+              <td class = show_state_td><%= "#{over_limit.item.name}"%></td>
+              <td class = show_state_td><%= "#{over_limit.id}"%></td>
+              <td class = show_state_td><%= "期限から【#{over_day_alarm.to_i.abs}日】経過"%></td>
+              <td class = show_state_td><%= over_limit.quantity %><%= over_limit.unit.name %></td>
+              <td class = show_state_td><%= "#{over_limit.limit_day.strftime("%Y年%m月%d日")}"%></td>
             </tr>
           <% end %>
-        <% end %>
-      <% end %>
-    </table>
-    <% @test.each do |test| %>
-      <%= test.id %>
-      <%= test.unit_id %>
-      <%= test.limit_id %>
-      <%= test.storage_name %>
-            <% end %>
+        </table>
+      </div>
+    </div>
   <% else %>
-    なし
+      なし
   <% end %>
 </div>
-    </div>

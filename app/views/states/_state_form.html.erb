@@ -12,7 +12,7 @@
 
   <%= form_with(model:[@item, @state], local: true) do |form| %>
     <div class = "state_quantitiy_index" >
-      数量・単位を入力して下さい。
+      数量・単位を入力して下さい。[数量は1〜9,999,999まで入力できます]
     </div>
       <%= form.text_field :quantity,class: :state_quantitiy_form , placeholder: "在庫数を入力"%>
       <%= form.collection_select(:unit_id, Unit.all, :id , :name, {},{class:"quantitiy_unit"} ) %>
