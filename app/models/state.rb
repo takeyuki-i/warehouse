@@ -1,7 +1,7 @@
 class State < ApplicationRecord
 
   with_options presence: true do
-    validates :quantity , format: { with: [0-9] , message: "数字以外は入力できません。" }
+    validates :quantity , format: { with: /\A[0-9]+\z/ }
     validates :unit_id
     validates :limit_id
     validates :storage_name , format: { with:  /\A[a-zA-Zａ-ｚＡ-ｚぁ-んァ-ヶ一-龥々ー]+\z/ }
